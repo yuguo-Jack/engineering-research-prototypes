@@ -6,7 +6,7 @@
 <p>An independent collection of engineering prototypes, with source, reproducible
 entry points, measured results, and explicit environment/data requirements.</p>
 <p><strong><a href="https://yuguo-jack.github.io/engineering-research-prototypes/">在线成果总览</a></strong> ·
-<a href="../../index.html">离线总览</a> · <a href="CONTRIBUTING.html">组织规则</a> ·
+<a href="CONTRIBUTING.html">组织规则</a> ·
 <a href="docs/REPRODUCIBILITY.html">复现等级</a> · <a href="docs/PUBLISHING.html">收录与发布</a> ·
 <a href="_templates/project/README.html">新增成果模板</a></p>
 <p>每个 <code>projects/&lt;id&gt;/</code> 是一个独立成果，拥有自己的源码、
@@ -43,10 +43,11 @@ entry points, measured results, and explicit environment/data requirements.</p>
 外部给定参考分别标注；给定参考与本机结果不自动构成同机性能比较。</p>
 <h2 id="_2">从这里开始</h2>
 <ol>
-<li>直接打开 <code>index.html</code> 查看总览。页面不依赖联网字体、前端框架或构建服务。</li>
+<li>点击<a href="https://yuguo-jack.github.io/engineering-research-prototypes/">在线成果总览</a>浏览成果，无需下载仓库或安装环境。</li>
 <li>阅读所选成果的 <code>README.md</code>，再按 <code>REPRODUCE.md</code> 检查环境、编译和运行。</li>
 <li>仅想核对已保存结果时，执行项目内的 <code>python reproduce.py verify-results</code>。</li>
 </ol>
+<p>以下命令用于下载源码、复现和维护；本地预览供修改页面时使用。</p>
 <pre><code class="language-powershell">git clone https://github.com/yuguo-Jack/engineering-research-prototypes.git
 cd engineering-research-prototypes
 python -m pip install -r requirements.txt
@@ -54,7 +55,7 @@ python tools/check_repo.py --release
 python tools/catalog.py --check
 python tools/preview.py --port 8765
 </code></pre>
-<p>预览地址为 <code>http://127.0.0.1:8765</code>；退出时按 Ctrl+C。静态总览也可直接从文件打开。
+<p>本地开发预览地址为 <code>http://127.0.0.1:8765</code>；退出时按 Ctrl+C。
 仓库维护工具使用 Python 3.10+ 和 Git；根目录依赖仅用于文档生成和元数据检查。
 各原型运行依赖由各自目录独立声明，不需要为数值求解安装这些文档工具。</p>
 <pre><code class="language-text">projects/&lt;id&gt;/       独立成果：代码、环境、复现方法、结果、来源

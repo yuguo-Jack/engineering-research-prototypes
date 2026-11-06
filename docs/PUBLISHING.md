@@ -22,7 +22,7 @@ git diff --check
 git status --short
 ```
 
-`catalog.py` 同步 README 目录、总览、项目详情及可离线浏览的 HTML 文档。
+`catalog.py` 同步 README 目录、总览、项目详情及可浏览的 HTML 文档。
 生成页面由源 Markdown 和项目元数据维护，不直接编辑生成的 HTML。
 
 项目运行仅使用该项目自己的依赖；仓库根目录的 Markdown/元数据工具不参与数值求解。

@@ -6,7 +6,7 @@ An independent collection of engineering prototypes, with source, reproducible
 entry points, measured results, and explicit environment/data requirements.
 
 **[在线成果总览](https://yuguo-jack.github.io/engineering-research-prototypes/)** ·
-[离线总览](index.html) · [组织规则](CONTRIBUTING.md) ·
+[组织规则](CONTRIBUTING.md) ·
 [复现等级](docs/REPRODUCIBILITY.md) · [收录与发布](docs/PUBLISHING.md) ·
 [新增成果模板](_templates/project/README.md)
 
@@ -27,9 +27,11 @@ entry points, measured results, and explicit environment/data requirements.
 
 ## 从这里开始
 
-1. 直接打开 `index.html` 查看总览。页面不依赖联网字体、前端框架或构建服务。
+1. 点击[在线成果总览](https://yuguo-jack.github.io/engineering-research-prototypes/)浏览成果，无需下载仓库或安装环境。
 2. 阅读所选成果的 `README.md`，再按 `REPRODUCE.md` 检查环境、编译和运行。
 3. 仅想核对已保存结果时，执行项目内的 `python reproduce.py verify-results`。
+
+以下命令用于下载源码、复现和维护；本地预览供修改页面时使用。
 
 ```powershell
 git clone https://github.com/yuguo-Jack/engineering-research-prototypes.git
@@ -40,7 +42,7 @@ python tools/catalog.py --check
 python tools/preview.py --port 8765
 ```
 
-预览地址为 `http://127.0.0.1:8765`；退出时按 Ctrl+C。静态总览也可直接从文件打开。
+本地开发预览地址为 `http://127.0.0.1:8765`；退出时按 Ctrl+C。
 仓库维护工具使用 Python 3.10+ 和 Git；根目录依赖仅用于文档生成和元数据检查。
 各原型运行依赖由各自目录独立声明，不需要为数值求解安装这些文档工具。
 
