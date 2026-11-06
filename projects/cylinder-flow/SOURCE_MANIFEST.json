@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "source_revision": "a4e72a6f225655ac6cc4a77367ec04122a26c706",
+  "source_archive": "cylinder-v3.tar.gz",
+  "submission_sha256": "bb6fdde6e66ae19a70372ef8a89f3f1c3b65416f8c13f34b4b6d2efe1924041a",
+  "scope": "Copied calculation sources and the local dependencies needed by the selected numerical tests; new packaging scripts are maintained separately.",
+  "files": {
+    "src/coupled_flux.hpp": {
+      "sha256": "362c1b5a373d8bdc0874b6bc7602372aa2f17512ac42821631e161329606fd57",
+      "bytes": 2359
+    },
+    "src/cylinder.cpp": {
+      "sha256": "980f2d5f586a7dbfeb63063bb3c1c4ddc74e4df705a5c4f4b59bef0a465090ae",
+      "bytes": 36577
+    },
+    "tools/cylinder_anderson_qr_probe.cpp": {
+      "sha256": "9f380101974305ca764a772e153213e3c19fc37a72114d15ce383af03a72761a",
+      "bytes": 2996
+    },
+    "tools/fluent_sexpr.py": {
+      "sha256": "2afdf5acd6d323cf15ba06d788fda7c66da6f1016d6677a2a9f0d271820de73f",
+      "bytes": 1401
+    },
+    "tools/msvc_compile.py": {
+      "sha256": "0fe4436bc3f6554bd916cbcd0497cac082e8587683112d632c6c8d0694a4bb7b",
+      "bytes": 568
+    },
+    "tools/prepare_cylinder.py": {
+      "sha256": "3b43f8e73a41c8ed75c4efa2c021100fdec2a5c7dbd093e635bd5daaccbca6ed",
+      "bytes": 4405
+    },
+    "tools/reconstruction_probe.cpp": {
+      "sha256": "82bd694af4e2554df585fa6908d843b7eb3561c710b13a6aaad5285e861dadf4",
+      "bytes": 2183
+    }
+  }
+}

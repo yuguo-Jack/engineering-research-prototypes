@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "id": "__ID__",
+  "title": "__TITLE__",
+  "summary": "填写原型作用与范围。",
+  "domain": "other",
+  "status": "draft",
+  "version": "0.1.0",
+  "license": "LicenseRef-Author-Review",
+  "release_review_required": true,
+  "language": [],
+  "updated": "__DATE__",
+  "readme": "README.md",
+  "reproduce": "REPRODUCE.md",
+  "results": "RESULTS.md",
+  "data": {
+    "availability": "not-required"
+  },
+  "tags": [],
+  "highlights": [],
+  "figures": [],
+  "commands": [],
+  "limits": [
+    "草稿，验证覆盖范围尚待填写。"
+  ]
+}

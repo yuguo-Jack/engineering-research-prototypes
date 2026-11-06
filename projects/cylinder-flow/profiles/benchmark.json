@@ -1,0 +1,25 @@
+{
+  "name": "original-initial",
+  "ranks": 1,
+  "options": [
+    "--cfl",
+    "50",
+    "--order",
+    "2",
+    "--iterations",
+    "1000",
+    "--coupled-roe",
+    "--limiter",
+    "standard",
+    "--tol",
+    "1e-9",
+    "--jacobian",
+    "analytic",
+    "--jacobian-period",
+    "16",
+    "--ilu-fill",
+    "1",
+    "--anderson-depth",
+    "6"
+  ]
+}

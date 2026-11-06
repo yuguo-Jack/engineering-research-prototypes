@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "kind": "archived_formal_measurement",
+  "source_revision": "a4e72a6f225655ac6cc4a77367ec04122a26c706",
+  "source": "a4e72a6f225655ac6cc4a77367ec04122a26c706",
+  "iterations": 66,
+  "iteration_seconds_median": 0.223238375,
+  "base_iterations": 118,
+  "base_iteration_seconds": 0.651,
+  "descriptive_time_reduction_percent": 65.70839093701997,
+  "Cp_RMSE": 0.00034290409836364014,
+  "Cd": 0.07165254549873912,
+  "Cd_relative_error_percent": 0.0016670986973,
+  "same_machine_reference_rerun": false,
+  "official_score_claimed": false
+}

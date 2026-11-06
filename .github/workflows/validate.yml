@@ -1,0 +1,38 @@
+name: Repository and numerical checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  repository:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - run: python tools/check_repo.py
+      - run: python tools/catalog.py --check
+      - run: python -m unittest discover -s tests -v
+      - run: python projects/cylinder-flow/reproduce.py verify-results
+      - run: python projects/m6-wing/reproduce.py verify-results
+  numerical-core:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [cylinder-flow, m6-wing]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Install build and MPI dependencies
+        run: sudo apt-get update && sudo apt-get install -y build-essential cmake ninja-build libopenmpi-dev openmpi-bin
+      - run: python reproduce.py build --jobs 2
+        working-directory: projects/${{ matrix.project }}
+      - run: python reproduce.py test
+        working-directory: projects/${{ matrix.project }}
+# Source release references: https://github.com/actions/checkout/releases/tag/v7.0.1
+# https://github.com/actions/setup-python/releases/tag/v7.1.0

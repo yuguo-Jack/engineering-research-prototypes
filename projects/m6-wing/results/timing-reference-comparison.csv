@@ -1,0 +1,6 @@
+source,role,iterations,iteration_seconds,average_s_per_iter,clock_scope,native_same_machine_pair
+Provided Fluent2025R1,fixed209_reference,209,187.955,0.899,provided iteration timer; printed mean rounded,False
+Independent8ad/851 job972223,continuous400_checkpoint209,209,183.052494189,0.8758492544928229,actual same original400 run; not a separate fixed209 benchmark,False
+Independent8ad/851 job972223,own_first_window_start,207,181.368853419,0.8761780358405797,actual solver iteration segment; keep start vs confirmation separate,False
+Independent8ad/851 job972223,own_first_window_confirmation,306,265.4771408,0.8675723555555555,actual solver iteration segment; keep start vs confirmation separate,False
+Independent8ad/851 job972223,complete_original400,400,344.673694265,0.8616842356625,actual solver iteration segment; keep start vs confirmation separate,False

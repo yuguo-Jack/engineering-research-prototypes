@@ -1,0 +1,405 @@
+{
+  "schema_version": 1,
+  "role": "original_initial_input",
+  "distribution": "external_permission_required",
+  "archive_sha256": "bb6fdde6e66ae19a70372ef8a89f3f1c3b65416f8c13f34b4b6d2efe1924041a",
+  "zip_member": "contest-submission-20261026-v1/交付资料/archives/m6-851.tar.gz",
+  "files": [
+    {
+      "path": "rank-000.bin",
+      "bytes": 12428692,
+      "sha256": "5f50259540db5052baddd208c0d64dcf2e487057bac1aa588d42a737574af19c",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-000.bin"
+    },
+    {
+      "path": "rank-001.bin",
+      "bytes": 12972892,
+      "sha256": "e4084c8405b7e3a06767c30d5670b420544ae7fc834f11db10793796672be43c",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-001.bin"
+    },
+    {
+      "path": "rank-002.bin",
+      "bytes": 12564492,
+      "sha256": "17a28155dece3ae5bef0cec9c902bf0e29be737f48c50dcfdeecb57f6b0f6392",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-002.bin"
+    },
+    {
+      "path": "rank-003.bin",
+      "bytes": 12957820,
+      "sha256": "69458dd58494e864815ce9056748761c1522d0df703ffbf65627bf3dc4897c4c",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-003.bin"
+    },
+    {
+      "path": "rank-004.bin",
+      "bytes": 12613788,
+      "sha256": "87e296be3db734cf8fb681e7dec18db30b40d767973c43d0c1f35dd48bf68efa",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-004.bin"
+    },
+    {
+      "path": "rank-005.bin",
+      "bytes": 12886460,
+      "sha256": "8b5a8012c48e6e87531d0e4314c2ed00b4370b950341e889ca4e0e7c562d53a3",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-005.bin"
+    },
+    {
+      "path": "rank-006.bin",
+      "bytes": 12615668,
+      "sha256": "e174a528e6f4fc177ddaeab08fa42f1833399549b672265444ffa4abda7500f1",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-006.bin"
+    },
+    {
+      "path": "rank-007.bin",
+      "bytes": 13131400,
+      "sha256": "e8be0ece78d30ff24dba98bb04460527178e06a70b571c45e016a0dd12957a38",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-007.bin"
+    },
+    {
+      "path": "rank-008.bin",
+      "bytes": 11810284,
+      "sha256": "13d5aca49713ad48dd8110d9f456476b3210ec54ff1d27030715ed513f1a0e92",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-008.bin"
+    },
+    {
+      "path": "rank-009.bin",
+      "bytes": 14305084,
+      "sha256": "9a9dfb0fef45fe7ab11b8780be925a1f1d0f54e91370e9d5ffa44c0da1b8b6d7",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-009.bin"
+    },
+    {
+      "path": "rank-010.bin",
+      "bytes": 14340708,
+      "sha256": "d7a224223ae41f20681ef877955026ec03a3508cfe646537f069bc364a9f726e",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-010.bin"
+    },
+    {
+      "path": "rank-011.bin",
+      "bytes": 14342700,
+      "sha256": "0df740552adb574d9965b5e99d4f70d4f23cc1f99342fcf2eeff485eebe01e26",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-011.bin"
+    },
+    {
+      "path": "rank-012.bin",
+      "bytes": 11888744,
+      "sha256": "af54fd37ceb205742f1eae3bbbfd942a59c442d4231a4970c010098a31b673af",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-012.bin"
+    },
+    {
+      "path": "rank-013.bin",
+      "bytes": 14073188,
+      "sha256": "fed886d0191a6afc524825b46b5906c6504e19a9a967ee3614f34efaafdcc2c2",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-013.bin"
+    },
+    {
+      "path": "rank-014.bin",
+      "bytes": 13879236,
+      "sha256": "de7dc75814da98920bedcc29bef26eb3773872e876f9f6da192e94df53c5efde",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-014.bin"
+    },
+    {
+      "path": "rank-015.bin",
+      "bytes": 14248368,
+      "sha256": "7ae771a5d1582ace67d76c1c0a2df54d395be935f949f30d160846d82fbaa5ea",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-015.bin"
+    },
+    {
+      "path": "rank-016.bin",
+      "bytes": 12414136,
+      "sha256": "ff1907ac560f7beaae14cb26496f8bd1aeb150a3941652ca626faa848ba24dab",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-016.bin"
+    },
+    {
+      "path": "rank-017.bin",
+      "bytes": 12979860,
+      "sha256": "1f88fce02e10a786421286fa4c320e70c9b7f5d066d12c0f5c3b538070aef126",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-017.bin"
+    },
+    {
+      "path": "rank-018.bin",
+      "bytes": 13321204,
+      "sha256": "256b994e535202749353ed9a3fd357d63caeb2160e1a05cff0e9543540aa745a",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-018.bin"
+    },
+    {
+      "path": "rank-019.bin",
+      "bytes": 12724200,
+      "sha256": "3ef095a74240abf5158810cd2fa0c9497a90316a59088676e3d26973627d927e",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-019.bin"
+    },
+    {
+      "path": "rank-020.bin",
+      "bytes": 12862748,
+      "sha256": "18a605c0521756e98c0055942b3c24fdb4d67e0d2c86d0b237ee9c84d0f8a8dc",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-020.bin"
+    },
+    {
+      "path": "rank-021.bin",
+      "bytes": 13175596,
+      "sha256": "5828d8f7ad320d7b93751a4497c1235a55fea5e15549e88e4a8b28662767fd79",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-021.bin"
+    },
+    {
+      "path": "rank-022.bin",
+      "bytes": 13735680,
+      "sha256": "cf90b4a86eb49cc4196ca7aca8b6ab9947c5301aeda9721cdf4f848c41d3de0d",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-022.bin"
+    },
+    {
+      "path": "rank-023.bin",
+      "bytes": 12402548,
+      "sha256": "738258c9c35873160b8119651ce2ab973de6d065751a9b8bdd2c15b89a54c7a7",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-023.bin"
+    },
+    {
+      "path": "rank-024.bin",
+      "bytes": 14341448,
+      "sha256": "21704c9ef3c68afd1de38ba5ff3d91abfaaf2f136e407b63548095ae0f8572b8",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-024.bin"
+    },
+    {
+      "path": "rank-025.bin",
+      "bytes": 14347808,
+      "sha256": "29cb6b7132a2f7d46de23b022889cb557cc293d778ac7b1a58f7aec834faf9fc",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-025.bin"
+    },
+    {
+      "path": "rank-026.bin",
+      "bytes": 14293484,
+      "sha256": "a1fbbb9c43d541071a1de3cc5e07a37d7764ff0bbb6b2766de62296fa0d0d0ec",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-026.bin"
+    },
+    {
+      "path": "rank-027.bin",
+      "bytes": 11797704,
+      "sha256": "8c12b67774e46e14d8584bbff9f3021de27d20c93e99bca569bddbb2f099063e",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-027.bin"
+    },
+    {
+      "path": "rank-028.bin",
+      "bytes": 13857340,
+      "sha256": "58d1352d419b8b37c7e3b9271ab329894ee331ca3f87c3308ae323a738e289b3",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-028.bin"
+    },
+    {
+      "path": "rank-029.bin",
+      "bytes": 14263224,
+      "sha256": "02de4d42a1095ac26e906f49636f8906b6bfa032373e35835bec3d79895570f1",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-029.bin"
+    },
+    {
+      "path": "rank-030.bin",
+      "bytes": 14075972,
+      "sha256": "76703d69e57e22f6d7ccf1bf0ba25298a679515c29af6cf67a785f36330238f8",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-030.bin"
+    },
+    {
+      "path": "rank-031.bin",
+      "bytes": 11857224,
+      "sha256": "62282c75e091a649f8eb0434b8cd1b17eac3991d3b1cdfa52ee7eba7b6a0c560",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/rank-031.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-000.bin",
+      "bytes": 24344,
+      "sha256": "b9ab042e791af551824008dda7fcf4941d164197143746870973dbac5e91b57d",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-000.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-001.bin",
+      "bytes": 20912,
+      "sha256": "0a59d96027dbbb0e45658bb6efa606708162cd0fed91d77dfd930a8df0b3ada7",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-001.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-002.bin",
+      "bytes": 22376,
+      "sha256": "70e5f4768b188df9d067e9493336224f2287d27035aadeab67b0c2bacd89f7da",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-002.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-003.bin",
+      "bytes": 20744,
+      "sha256": "090ca3e920fdee66a3eeef499555347518c06257973aa72508958d939305e875",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-003.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-004.bin",
+      "bytes": 8552,
+      "sha256": "0306fae12ef997437851b838f19e857bccd3df18dafa11003c8dfd8dfd3c19a8",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-004.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-005.bin",
+      "bytes": 33944,
+      "sha256": "2e4a258154336059753590ddc229b3055a7725cf00880e2435800b91821e7dd7",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-005.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-006.bin",
+      "bytes": 5336,
+      "sha256": "fe8c2fb52b7a66a9f0cc29c471028909febb8cae575541099b44a4e173d04271",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-006.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-007.bin",
+      "bytes": 39128,
+      "sha256": "a5f921e13edc103727dc13d5db11258d6c5034408f8e5572ffe17d1ce2fa4360",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-007.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-008.bin",
+      "bytes": 752,
+      "sha256": "bf238edaf3f8b614fbe4e4f012d5049bb422af3e10f03a4a13c60a43b8d66490",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-008.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-009.bin",
+      "bytes": 1424,
+      "sha256": "4a5e3515c8b4cda813346e950aef3f382cb05c8e2aa2e8e85f20f2b0d54ead5b",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-009.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-010.bin",
+      "bytes": 5864,
+      "sha256": "5272dd208c5240ab08f5920c5bc628e582a6ff651f43b2514792224e659080c6",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-010.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-011.bin",
+      "bytes": 32,
+      "sha256": "8901f7e08cd18cb03280534d0abf95524ab6a5c5bead7631d9b255da0c20f30d",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-011.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-012.bin",
+      "bytes": 8240,
+      "sha256": "eecf683846add0452cb270670d693960231131de73ddd93b87c803abab6fde69",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-012.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-013.bin",
+      "bytes": 8840,
+      "sha256": "93890ff69f81a68c76d642054ac4f65fbb4ade06a34d70cf6ed046ba4acac43b",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-013.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-014.bin",
+      "bytes": 16856,
+      "sha256": "226671bd0127eaa47078ee33a30f945011f00d7de1b99a45ba103cdb3a88a381",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-014.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-015.bin",
+      "bytes": 80,
+      "sha256": "9a0035d52fb42d9d7de2d9a14a42859ef606710643a54be00193489d75c9a704",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-015.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-016.bin",
+      "bytes": 23912,
+      "sha256": "a2b9fd6561f9401cc83ba4c5ed0b91612dabce71de7c228d41420ace5ae0eacd",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-016.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-017.bin",
+      "bytes": 21032,
+      "sha256": "2ebf8076def2c105e58dce31215f70074f7a25735eafe59e2dad8a18ded93cc2",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-017.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-018.bin",
+      "bytes": 37784,
+      "sha256": "8ec01b932fcd187ff817e2df99fba6d23f7b8bd58f0cd2d92986cee0c826759e",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-018.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-019.bin",
+      "bytes": 5336,
+      "sha256": "58401f614b09a9caf66be3980ba50727db34a58dfae267cb73ad22eb5107cb10",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-019.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-020.bin",
+      "bytes": 33680,
+      "sha256": "d71adcd449f0bbe42cc71cebcf078151f97174b23d3a13d0cdb574414059e36b",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-020.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-021.bin",
+      "bytes": 39488,
+      "sha256": "c6352dddd85ee8bd4b5049c542daf9e0931deb52b0bdb622a8c818aac1dd5767",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-021.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-022.bin",
+      "bytes": 13640,
+      "sha256": "3d15f4bc8f8882e0c0bc5847b136c52ad4b28de634d3969116a06e01125f0405",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-022.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-023.bin",
+      "bytes": 200,
+      "sha256": "e472836490af08debfd19466912526f8680fba69d7368c32c740a89713252c71",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-023.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-024.bin",
+      "bytes": 5984,
+      "sha256": "a54a81926d272ebec9eac47bcd031b00b465592f4dc939435efc9276f8c18c47",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-024.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-025.bin",
+      "bytes": 56,
+      "sha256": "beef391b994c7cd631035ae81274683150722e196bce393d6bbed469f15cfdac",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-025.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-026.bin",
+      "bytes": 1376,
+      "sha256": "4a513588c51591c311fdb6d0f7f2d7ee03e4832c1da9481757ed6f209bec24f2",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-026.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-027.bin",
+      "bytes": 752,
+      "sha256": "0e903f0c3b1d7cac49eea877f58f335f1ae4a09721a4d08d56c3cab5f00b7b49",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-027.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-028.bin",
+      "bytes": 17384,
+      "sha256": "53c20ec7c88ec58a1ab8d67c91ae48971f76d36c8d260c5970924bffd3374deb",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-028.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-029.bin",
+      "bytes": 56,
+      "sha256": "cf40d0ea0e8057bd3080d0352380b711b94a387c037f06bac03379ef91279249",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-029.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-030.bin",
+      "bytes": 8648,
+      "sha256": "4efdabaa51c6dcb82d2d7af79f199af3d05bec1ea40e81cd95e3b42332a6285d",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-030.bin"
+    },
+    {
+      "path": "scalar-boundary-init-rank-031.bin",
+      "bytes": 8072,
+      "sha256": "5dde7046c2d05fcfe4ab39accd2fe9b4965aef2da25f96c8b9a920d1f259d03b",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/scalar-boundary-init-rank-031.bin"
+    },
+    {
+      "path": "material-polynomials.bin",
+      "bytes": 288,
+      "sha256": "90512e0b924ed7e764b5ad6629dab3371a7443fb74d285941d78e5cfed066312",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/material-polynomials.bin"
+    },
+    {
+      "path": "flow-update-limits.bin",
+      "bytes": 52,
+      "sha256": "ae08e145470973233bd733f183edfab28c64229c23bffdc94c08ca26ae689567",
+      "tar_member": "linux-m6-combined-equivalent-v2-package-v1/payload/inputs/original66/flow-update-limits.bin"
+    }
+  ]
+}

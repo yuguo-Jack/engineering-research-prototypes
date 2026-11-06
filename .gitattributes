@@ -1,0 +1,25 @@
+* text=auto eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+*.cpp text eol=lf
+*.hpp text eol=lf
+*.h text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary
+
+# Preserve the exact bytes whose original hashes are recorded in project manifests.
+projects/**/src/** -text
+projects/**/tools/** -text
+projects/**/CMakeLists.txt -text
+projects/**/results/raw/** -text
+projects/**/results/*.csv -text
+

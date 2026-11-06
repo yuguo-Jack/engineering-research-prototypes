@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "projects": [
+    {
+      "schema_version": 1,
+      "domain": "cfd",
+      "status": "archived",
+      "version": "1.0.0",
+      "license": "LicenseRef-Author-Review",
+      "release_review_required": true,
+      "language": [
+        "C++17",
+        "Python"
+      ],
+      "updated": "2026-11-06",
+      "readme": "README.md",
+      "reproduce": "REPRODUCE.md",
+      "results": "RESULTS.md",
+      "data": {
+        "availability": "external-permission-required",
+        "manifest": "data/manifest.json"
+      },
+      "validation": "results/VALIDATION.json",
+      "metrics": "results/metrics.json",
+      "id": "cylinder-flow",
+      "title": "圆柱绕流 · 单核有限体积求解",
+      "summary": "独立 C++ 求解原型，保留串行计算入口、原始初场校验与九次正式结果；可从源码构建并核对数值。",
+      "tags": [
+        "有限体积",
+        "单核 CPU",
+        "数值求解",
+        "C++17"
+      ],
+      "source_revision": "a4e72a6f225655ac6cc4a77367ec04122a26c706",
+      "hero": "results/figures/cylinder-v3-field-samples.png",
+      "figures": [
+        {
+          "path": "results/figures/cylinder-v3-field-samples.png",
+          "caption": "归档工况的场量采样展示。"
+        },
+        {
+          "path": "results/figures/cylinder-v3-evaluation.png",
+          "caption": "归档结果中的精度、收敛和正式计时对照。"
+        }
+      ],
+      "highlights": [
+        {
+          "label": "正式中位求解时间",
+          "value": "0.223238",
+          "unit": "s",
+          "note": "9 次单核样本，历史 Linux 环境"
+        },
+        {
+          "label": "收敛迭代数",
+          "value": "66",
+          "unit": "步",
+          "note": "原始初场，残差阈值 1e-9"
+        },
+        {
+          "label": "Cp RMSE",
+          "value": "0.0003429",
+          "unit": "",
+          "note": "指定压力取样与参考口径"
+        }
+      ],
+      "limits": [
+        "输入数据需从授权归档导入。",
+        "历史参考来自给定日志，未在同机重跑参考程序。"
+      ],
+      "commands": [
+        "python reproduce.py doctor",
+        "python reproduce.py build --jobs 2",
+        "python reproduce.py test",
+        "python reproduce.py verify-results"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "domain": "cfd",
+      "status": "archived",
+      "version": "1.0.0",
+      "license": "LicenseRef-Author-Review",
+      "release_review_required": true,
+      "language": [
+        "C++17",
+        "Python"
+      ],
+      "updated": "2026-11-06",
+      "readme": "README.md",
+      "reproduce": "REPRODUCE.md",
+      "results": "RESULTS.md",
+      "data": {
+        "availability": "external-permission-required",
+        "manifest": "data/manifest.json"
+      },
+      "validation": "results/VALIDATION.json",
+      "metrics": "results/metrics.json",
+      "id": "m6-wing",
+      "title": "M6 机翼 · MPI 并行流动求解",
+      "summary": "三维 RANS/SST 计算原型，固定 32 个 MPI 进程；完整保留 400 步历史、稳定窗口径与压力/受力误差。",
+      "tags": [
+        "RANS / SST",
+        "32 MPI",
+        "机翼气动",
+        "C++17"
+      ],
+      "source_revision": "8ad576d73a8aa52601a88c3c66db8b62ee580ca3",
+      "hero": "results/figures/owner-cell-pressure-209.png",
+      "figures": [
+        {
+          "path": "results/figures/owner-cell-pressure-209.png",
+          "caption": "第 209 步的 owner-cell 压力取样对照；并非壁面重构面值。"
+        },
+        {
+          "path": "results/figures/force-history-and-own-stability.png",
+          "caption": "完整 400 步受力历史与自身稳定窗口。"
+        },
+        {
+          "path": "results/figures/nonlinear-residual-history.png",
+          "caption": "完整工况的非线性残差历史。"
+        }
+      ],
+      "highlights": [
+        {
+          "label": "稳定窗确认耗时",
+          "value": "265.477",
+          "unit": "s",
+          "note": "第 306 步确认 207–306 百步窗口"
+        },
+        {
+          "label": "并行规模",
+          "value": "32",
+          "unit": "MPI",
+          "note": "1,485,672 个单元，固定 400 步"
+        },
+        {
+          "label": "窗口起点 Cp RMSE",
+          "value": "0.0044814",
+          "unit": "",
+          "note": "自研第 207 步 vs 给定第 209 步"
+        }
+      ],
+      "limits": [
+        "窗口起点 207 步耗时 181.368853 s；不能当作窗口已确认。",
+        "给定参考 187.955 s 的口径为起点 209，未同机重跑。",
+        "统一参考精度误差硬容限未公布，不声明官方验收或评分。"
+      ],
+      "commands": [
+        "python reproduce.py doctor",
+        "python reproduce.py build --jobs 2",
+        "python reproduce.py test",
+        "python reproduce.py verify-results"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "source_revision": "8ad576d73a8aa52601a88c3c66db8b62ee580ca3",
+  "source_archive": "m6-851.tar.gz",
+  "submission_sha256": "bb6fdde6e66ae19a70372ef8a89f3f1c3b65416f8c13f34b4b6d2efe1924041a",
+  "scope": "Copied calculation sources and the local dependencies needed by the selected numerical tests; new packaging scripts are maintained separately.",
+  "files": {
+    "CMakeLists.txt": {
+      "sha256": "29558efd279efbf45d82afec300d3465944ef1f4436c9ea1e43fb68932b918f4",
+      "bytes": 6336
+    },
+    "src/coupled_flux.hpp": {
+      "sha256": "362c1b5a373d8bdc0874b6bc7602372aa2f17512ac42821631e161329606fd57",
+      "bytes": 2359
+    },
+    "src/cylinder.cpp": {
+      "sha256": "b8925c6a0710eb3bcdee0d1eeb9c5b2b610183bfbd61622432af06e58061b6fd",
+      "bytes": 32093
+    },
+    "src/m6.cpp": {
+      "sha256": "43dec2c327b7407afe6b50907fcf0a3701e62828c936be4f148c4ca9321fa9bf",
+      "bytes": 128378
+    },
+    "src/m6_acceleration.hpp": {
+      "sha256": "6679295048a3719473b9d807c484a0e113e0ccb7730bf6ac52921328f28a8421",
+      "bytes": 2068
+    },
+    "src/m6_approximate_jacobian.hpp": {
+      "sha256": "92d80626e3921e0002bea6e6e01d631d354a9f39f52f75e7e02d85f34e6e6001",
+      "bytes": 5077
+    },
+    "src/m6_cell_jacobian_cache.hpp": {
+      "sha256": "03e6953a674368ec417e9c66c4fef0fc90236f3be56b587e193a069257281db0",
+      "bytes": 2827
+    },
+    "src/m6_farfield.hpp": {
+      "sha256": "4ffe8fc8b067344e32b9b1e916518f8d3a99e5afb6537f767270ef33370f010d",
+      "bytes": 4094
+    },
+    "src/m6_farfield_jacobian.hpp": {
+      "sha256": "70ae34df7ea5bf0e1bfef8ab2b5b22dc3222223c1a78c949fc613d694d865b95",
+      "bytes": 4404
+    },
+    "src/m6_flow_update.hpp": {
+      "sha256": "84b7a1e453af2f6a34f041070a0ab9d76df45e5aeb8c9186bd6769c8caac5bff",
+      "bytes": 2169
+    },
+    "src/m6_flux_jacobian.hpp": {
+      "sha256": "3713931025c9b05cc2423e24c18c78cd20f4cd034dbbde209d45d1a8e79a11a3",
+      "bytes": 4031
+    },
+    "src/m6_linear.hpp": {
+      "sha256": "7ca26c96edbb7632afb4f3e1d3576c000df1d5489d49bd2e698525bd0559a3db",
+      "bytes": 7936
+    },
+    "src/m6_material.hpp": {
+      "sha256": "a553a9b400595d886c29c5e94db5038c827631e3fe3b14f67e054ce6a4acf9af",
+      "bytes": 4770
+    },
+    "src/m6_mesh.hpp": {
+      "sha256": "1d7a8be1c0100a94ce69f3c467d8f58582e9e268280461181deea88e1337e074",
+      "bytes": 4662
+    },
+    "src/m6_physics.hpp": {
+      "sha256": "cc3d98ee2aa8a87e4a6625cf7a6718a221c6e3d10bc0d68cd1b80ea4ba5695c1",
+      "bytes": 12857
+    },
+    "src/m6_pseudotime.hpp": {
+      "sha256": "9f1f2de265cd2f971fa7306d88ebc9768360b8f058287904d831846ed9e53b5d",
+      "bytes": 1319
+    },
+    "src/m6_scalar_reconstruction.hpp": {
+      "sha256": "4cb3ff1b43d1290cb102e642ca7dac17433c2b1e8d4c357d23677213c2c11498",
+      "bytes": 3392
+    },
+    "src/m6_scalar_time.hpp": {
+      "sha256": "6d380161bf67cddecb5e074acb965e3ec35040ebec8e6da7e57d4e599bb421ac",
+      "bytes": 539
+    },
+    "src/m6_scalar_update.hpp": {
+      "sha256": "ebd96b6c4e0394a60a7e00b2f6f6410a9789c2a7a473a8acc9e49fe4d47bca5c",
+      "bytes": 1281
+    },
+    "src/m6_sst_transport.hpp": {
+      "sha256": "f9c07574b50eb7635d8d7848bbe2f4876e2061e4ffa609eb080c4a409dbc9924",
+      "bytes": 6844
+    },
+    "src/m6_viscous.hpp": {
+      "sha256": "3b62b2ee05e0c96c4d03f6dcf9378aefbd8fcbd93b294cffb02c232aa5ccbca5",
+      "bytes": 1435
+    },
+    "src/m6_wall_jacobian.hpp": {
+      "sha256": "9463b32115ddb54b242a7f732e79194271511d8884aace79a3bc5ec6e0a1dca3",
+      "bytes": 758
+    },
+    "src/m6_wall_slip.hpp": {
+      "sha256": "0637773489f3cefc20d3c5169ada738558add90802ca71d69218d9ecdfd2de43",
+      "bytes": 2966
+    },
+    "src/m6_wall_thermal.hpp": {
+      "sha256": "36f6dbe76e1e42a5137dc0abcd4101927bd633405de358308648126481980399",
+      "bytes": 3986
+    },
+    "tools/check_m6_dead_normal_lsq_bits.py": {
+      "sha256": "b5e38aac8faef20f3be9e776a3897babcad4984ff31d38851fd8c5630bd59010",
+      "bytes": 4347
+    },
+    "tools/m6_cartesian_fixture.hpp": {
+      "sha256": "89e7f76d82a2365e2603a49059e44a292af6d646f8d1f0d037628b6e491f17fc",
+      "bytes": 4229
+    },
+    "tools/m6_cell_jacobian_cache_test.cpp": {
+      "sha256": "9a716dd23af0dbc320a8f0afcb1a5d0cfbb28b0aba7fa847caa87b6839df604b",
+      "bytes": 4065
+    },
+    "tools/m6_dead_normal_lsq_pair_probe.cpp": {
+      "sha256": "d345305830c7b60c09ff9d53637e2e641b1c0575ed87d559df05b3454648602e",
+      "bytes": 8177
+    },
+    "tools/m6_dead_normal_lsq_probe.cpp": {
+      "sha256": "b6bc64a242734d1cc01c8fdc4a8af0207038adc8d52263d73d27bb5311d38a61",
+      "bytes": 9560
+    },
+    "tools/m6_postflow_k_pair_probe.cpp": {
+      "sha256": "09ca9bece9099c38c4b8195b2139828ec58ac37eac65653ba6970d49e9f6dbc8",
+      "bytes": 9824
+    },
+    "tools/m6_skip_postflow_assembly_pair_probe.cpp": {
+      "sha256": "90e5c5eb47301dd47ab4a4e812db7e90a6c822a5b256ff30ddb5ad32beb4abfc",
+      "bytes": 18142
+    },
+    "tools/m6_wall_slip_probe.cpp": {
+      "sha256": "4515f81219e550a8840281f0f5268497d3bffc44b7683320ca52f53fa06cbe1e",
+      "bytes": 3458
+    },
+    "tools/m6_wall_thermal_probe.cpp": {
+      "sha256": "bbb1627a7020f19cf77056e96c40934518f34bef803649e77d04130e7e54d07c",
+      "bytes": 4273
+    },
+    "tools/msvc_compile.py": {
+      "sha256": "0fe4436bc3f6554bd916cbcd0497cac082e8587683112d632c6c8d0694a4bb7b",
+      "bytes": 568
+    }
+  }
+}

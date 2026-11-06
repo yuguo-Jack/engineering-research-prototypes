@@ -1,0 +1,10 @@
+1 residual=1 linear=4 alpha=1 time=0.00407575
+2 residual=1 linear=7 alpha=1 time=0.00784019
+3 residual=0.57472 linear=6 alpha=1 time=0.0111575
+4 residual=0.396271 linear=5 alpha=1 time=0.0141365
+5 residual=0.435449 linear=4 alpha=1 time=0.0168044
+20 residual=0.0142763 linear=4 alpha=1 time=0.0626278
+40 residual=4.43425e-06 linear=6 alpha=1 time=0.128672
+60 residual=2.33282e-08 linear=3 alpha=1 time=0.205782
+Anderson QR incremental=56 downdates=26 rebuilds=5
+RESULT iterations=66 residual=8.99221e-10 seconds=0.222934 Cd=0.0716525 Cl=-5.69412e-09

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "role": "original_initial_input",
+  "distribution": "external_permission_required",
+  "archive_sha256": "bb6fdde6e66ae19a70372ef8a89f3f1c3b65416f8c13f34b4b6d2efe1924041a",
+  "zip_member": "contest-submission-20261026-v1/交付资料/archives/cylinder-v3.tar.gz",
+  "files": [
+    {
+      "path": "cylinder.bin",
+      "bytes": 224072,
+      "sha256": "867234543f3c265a52cc1b6129f829e73e5e85367a46224fcd6d88d40ef82b06",
+      "tar_member": "linux-cylinder-gcc12-incremental-qr-v3/data/cylinder/cylinder.bin"
+    }
+  ]
+}

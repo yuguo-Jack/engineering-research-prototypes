@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "source_archive_sha256": "bb6fdde6e66ae19a70372ef8a89f3f1c3b65416f8c13f34b4b6d2efe1924041a",
+  "measurement_date": "2026-10-26",
+  "files": [
+    {
+      "path": "results/figures/force-history-and-own-stability.png",
+      "sha256": "462a13d13f9948dcee9207114e41821aeff21a7c0c81438e90185d048358a6f9",
+      "bytes": 182125,
+      "archive_member": "contest-submission-20261026-v1/交付资料/evaluation/m6-evaluation-evidence-972223-v2/figures/force-history-and-own-stability.png"
+    },
+    {
+      "path": "results/figures/nonlinear-residual-history.png",
+      "sha256": "fa9e834949bd5f5941c44bbce93a15a63ae28b15b0a94b761871d9b167a17d1e",
+      "bytes": 209958,
+      "archive_member": "contest-submission-20261026-v1/交付资料/evaluation/m6-evaluation-evidence-972223-v2/figures/nonlinear-residual-history.png"
+    },
+    {
+      "path": "results/figures/owner-cell-pressure-209.png",
+      "sha256": "8a0c412c3316bfd9ccd1fb17d932f6e9e32fae19abfd04d9900d8275dbbad6fb",
+      "bytes": 769553,
+      "archive_member": "contest-submission-20261026-v1/交付资料/evaluation/m6-evaluation-evidence-972223-v2/pressure-figures/owner-cell-pressure-209.png"
+    },
+    {
+      "path": "results/raw/history.csv",
+      "sha256": "46806b3ff9a021c5a1b6236d6818d7e01339268393da5a37d359bf39e805115f",
+      "bytes": 146703,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/M6-972223/history.csv"
+    },
+    {
+      "path": "results/raw/linear-audit.csv",
+      "sha256": "dbc4098100d15ec927a95c3a26db332322d9d9a125c48ffe0c241e3cb9b3ab71",
+      "bytes": 4503,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/M6-972223/linear-audit.csv"
+    },
+    {
+      "path": "results/raw/turbulence-linear-audit.csv",
+      "sha256": "e31d0e0556c000c1517eccfbfe91cef843f9b36fa4e7cbbe83c01dcf4c2a45e4",
+      "bytes": 4198,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/M6-972223/turbulence-linear-audit.csv"
+    },
+    {
+      "path": "results/raw/stdout.log",
+      "sha256": "73b4b136e01da5b4116a6cb6c06b641faf54caa801e1f91d8bdb80f5919ae37e",
+      "bytes": 35057,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/M6-972223/stdout.log"
+    },
+    {
+      "path": "results/accuracy-summary.csv",
+      "sha256": "a3048155cc00b9af4f6930816916d5804e61494a0cd87950ac672814757ca4fe",
+      "bytes": 1542,
+      "archive_member": "contest-submission-20261026-v1/交付资料/evaluation/m6-evaluation-evidence-972223-v2/tables/accuracy-summary.csv"
+    },
+    {
+      "path": "results/field-error-metrics.csv",
+      "sha256": "68cf3ad820980e9ae8d0e53191868cdd973d6c836e33940031516e89865d96e4",
+      "bytes": 4083,
+      "archive_member": "contest-submission-20261026-v1/交付资料/evaluation/m6-evaluation-evidence-972223-v2/tables/field-error-metrics.csv"
+    },
+    {
+      "path": "results/timing-reference-comparison.csv",
+      "sha256": "24deb4f5b973402a1ef5d02cb3da3e92f5e09fc22176979e9cc18558b281d395",
+      "bytes": 870,
+      "archive_member": "contest-submission-20261026-v1/交付资料/evaluation/m6-evaluation-evidence-972223-v2/tables/timing-reference-comparison.csv"
+    },
+    {
+      "path": "results/raw/summary.json",
+      "sha256": "4cd71ef0b9c040d47b33622d641a98bd2458f482b33aa3ddd207288ed8ecabbf",
+      "bytes": 4008,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/M6-972223/summary.json"
+    }
+  ]
+}

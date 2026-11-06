@@ -1,0 +1,19 @@
+{
+  "title": "工程研究灵感",
+  "name": "Engineering Research Ideas",
+  "tagline": "把灵感做成可复现的工程原型。",
+  "domains": {
+    "cfd": "计算流体",
+    "signals": "通信与雷达",
+    "robotics": "机器人",
+    "embedded": "嵌入式",
+    "controls": "控制系统",
+    "other": "其他工程"
+  },
+  "future_directions": [
+    "通信与雷达信号处理",
+    "机器人感知与控制",
+    "嵌入式算法与部署"
+  ],
+  "preview": true
+}

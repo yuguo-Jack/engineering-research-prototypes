@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Independent engineering result",
+  "type": "object",
+  "required": ["schema_version", "id", "title", "summary", "domain", "status", "version", "license", "readme", "reproduce", "results", "data"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "title": {"type": "string", "minLength": 1},
+    "summary": {"type": "string", "minLength": 1},
+    "domain": {"enum": ["cfd", "signals", "robotics", "embedded", "controls", "other"]},
+    "status": {"enum": ["draft", "prototype", "reproduced", "archived"]},
+    "version": {"type": "string", "minLength": 1},
+    "license": {"type": "string", "minLength": 1},
+    "release_review_required": {"type": "boolean"},
+    "language": {"type": "array", "items": {"type": "string"}},
+    "tags": {"type": "array", "items": {"type": "string"}},
+    "updated": {"type": "string", "format": "date"},
+    "readme": {"type": "string"},
+    "reproduce": {"type": "string"},
+    "results": {"type": "string"},
+    "validation": {"type": "string"},
+    "metrics": {"type": "string"},
+    "hero": {"type": "string"},
+    "data": {"type": "object", "required": ["availability"], "properties": {"availability": {"enum": ["not-required", "included", "external-permission-required"]}, "manifest": {"type": "string"}}},
+    "figures": {"type": "array", "items": {"type": "object", "required": ["path", "caption"], "properties": {"path": {"type": "string"}, "caption": {"type": "string"}}}},
+    "highlights": {"type": "array", "items": {"type": "object", "required": ["label", "value"], "properties": {"label": {"type": "string"}, "value": {"type": "string"}, "unit": {"type": "string"}, "note": {"type": "string"}}}},
+    "commands": {"type": "array", "items": {"type": "string"}},
+    "limits": {"type": "array", "items": {"type": "string"}},
+    "source_revision": {"type": "string"}
+  },
+  "allOf": [{"if": {"properties": {"status": {"enum": ["reproduced", "archived"]}}}, "then": {"required": ["validation"]}}]
+}

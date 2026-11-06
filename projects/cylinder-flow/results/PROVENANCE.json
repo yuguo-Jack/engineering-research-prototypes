@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "source_archive_sha256": "bb6fdde6e66ae19a70372ef8a89f3f1c3b65416f8c13f34b4b6d2efe1924041a",
+  "measurement_date": "2026-10-26",
+  "files": [
+    {
+      "path": "results/figures/cylinder-v3-evaluation.png",
+      "sha256": "90c0a4a946e614f830e36017a7d0f5a7fb93c6889f33eb17938771cff629537b",
+      "bytes": 260093,
+      "archive_member": "contest-submission-20261026-v1/交付资料/evaluation/cylinder-evaluation-evidence-971888-v1/cylinder-v3-evaluation.png"
+    },
+    {
+      "path": "results/figures/cylinder-v3-field-samples.png",
+      "sha256": "d18cff49448b47592d36aa6574b69c7a7a9443c1bfb3ae6cb90112e1ded450b7",
+      "bytes": 368442,
+      "archive_member": "contest-submission-20261026-v1/交付资料/evaluation/cylinder-evaluation-evidence-971888-v1/cylinder-v3-field-samples.png"
+    },
+    {
+      "path": "results/raw/formal-01/history.csv",
+      "sha256": "578a7249ede131b186e8ba94528fd332678b7d98fec4f5e72218cfcd039aa32e",
+      "bytes": 8562,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-01-incrementAA6/history.csv"
+    },
+    {
+      "path": "results/raw/formal-01/stdout.log",
+      "sha256": "104a39469ef568e5973f35ea6854dfe7675bb50e4e8e873713744f430e65e82b",
+      "bytes": 549,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-01-incrementAA6/stdout.log"
+    },
+    {
+      "path": "results/raw/formal-01/summary.json",
+      "sha256": "104e0ac705e31036211309b255331f6d00e6a0ff68ca8076f7d13de87dfae23b",
+      "bytes": 871,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-01-incrementAA6/summary.json"
+    },
+    {
+      "path": "results/raw/formal-02/history.csv",
+      "sha256": "29b705edd6a7c1c8d9be393fc4d89e6b0ff5df7a221a6b7421898de2573683a0",
+      "bytes": 8528,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-02-incrementAA6/history.csv"
+    },
+    {
+      "path": "results/raw/formal-02/stdout.log",
+      "sha256": "c297d6b8c7f72ca96971e6bddc939e0266b184c1fc6f37ec3171fc568b8629eb",
+      "bytes": 550,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-02-incrementAA6/stdout.log"
+    },
+    {
+      "path": "results/raw/formal-02/summary.json",
+      "sha256": "041fd6c92d6e0bc3f45f76d948fcf182feabe835946d74bbd8287973e1f6869f",
+      "bytes": 863,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-02-incrementAA6/summary.json"
+    },
+    {
+      "path": "results/raw/formal-03/history.csv",
+      "sha256": "7bbd76cfa60cb19b2c49894621ac67859f267b40e2b6558b2ff1962711360636",
+      "bytes": 8544,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-03-incrementAA6/history.csv"
+    },
+    {
+      "path": "results/raw/formal-03/stdout.log",
+      "sha256": "88a4c458f2af7ebc99c7b8d168797d512c3f89cc9d4e067d7393b87ee18e0ecf",
+      "bytes": 550,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-03-incrementAA6/stdout.log"
+    },
+    {
+      "path": "results/raw/formal-03/summary.json",
+      "sha256": "f3d0c26ff461117391e1fc5d94a50b560c88b3b12db2285d339a760da258e92c",
+      "bytes": 871,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-03-incrementAA6/summary.json"
+    },
+    {
+      "path": "results/raw/formal-04/history.csv",
+      "sha256": "80b75ae02fbce0e8bdcc5eac5940ae1e369a183d94ed7b21d38e03df70ffea5f",
+      "bytes": 8557,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-04-incrementAA6/history.csv"
+    },
+    {
+      "path": "results/raw/formal-04/stdout.log",
+      "sha256": "db49602408d4fbedd05e17fd0c8d440223514dfc94c604b687bb39795f1838a9",
+      "bytes": 548,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-04-incrementAA6/stdout.log"
+    },
+    {
+      "path": "results/raw/formal-04/summary.json",
+      "sha256": "8eaec295f8a03ff37bc5504ae13bd917fadf71925422896b255581b63f5bab3f",
+      "bytes": 871,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-04-incrementAA6/summary.json"
+    },
+    {
+      "path": "results/raw/formal-05/history.csv",
+      "sha256": "fe4e497f3431d1ee8f462c7315d63cb943781316346fd6511c0fe1e03d1adae3",
+      "bytes": 8558,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-05-incrementAA6/history.csv"
+    },
+    {
+      "path": "results/raw/formal-05/stdout.log",
+      "sha256": "d0e4e9108c77134ca6460f06b9f56ec278415fda076cd66dd1133b784feaa243",
+      "bytes": 549,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-05-incrementAA6/stdout.log"
+    },
+    {
+      "path": "results/raw/formal-05/summary.json",
+      "sha256": "007204bb2c03f278262dc29ef8d5177ac3a17efc2be2c4a77f0d5d5912a1635b",
+      "bytes": 862,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-05-incrementAA6/summary.json"
+    },
+    {
+      "path": "results/raw/formal-06/history.csv",
+      "sha256": "70561c3955b81abd1545f2d36c65b3635a0de363478b9b03cc83f05800034eeb",
+      "bytes": 8547,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-06-incrementAA6/history.csv"
+    },
+    {
+      "path": "results/raw/formal-06/stdout.log",
+      "sha256": "a10576475cc5f75fb6ad5ec4ac6fecf1e644eaee95ee8e7bd268f94d7ce655b4",
+      "bytes": 550,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-06-incrementAA6/stdout.log"
+    },
+    {
+      "path": "results/raw/formal-06/summary.json",
+      "sha256": "be2c21cb5745a4a4c34a4cb3ad8cc2c977d4367310a8f02054a34a4f5aa26d4a",
+      "bytes": 854,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-06-incrementAA6/summary.json"
+    },
+    {
+      "path": "results/raw/formal-07/history.csv",
+      "sha256": "6d3d5b8f138d2c9af62ab6f1bdc458757f8d86db70e81e0a7ad1ec7d021376f1",
+      "bytes": 8542,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-07-incrementAA6/history.csv"
+    },
+    {
+      "path": "results/raw/formal-07/stdout.log",
+      "sha256": "19c8863f8ce6e751ecdb41b60cf8e889a474d7444e60653a9dfe14fb255e1e8f",
+      "bytes": 548,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-07-incrementAA6/stdout.log"
+    },
+    {
+      "path": "results/raw/formal-07/summary.json",
+      "sha256": "2fe250de19900893aba6c09f2caa584bc4d7a3a0a749316994c9fb264e7fda1a",
+      "bytes": 863,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-07-incrementAA6/summary.json"
+    },
+    {
+      "path": "results/raw/formal-08/history.csv",
+      "sha256": "b9ad48ccc731666901240bebabf10741933d99bd41214d83bc5c51ee35ae012f",
+      "bytes": 8560,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-08-incrementAA6/history.csv"
+    },
+    {
+      "path": "results/raw/formal-08/stdout.log",
+      "sha256": "24f1b5464b094aaa763d39b96d479c0447ba3c9f4a1998e43a2da4cd31bb7cd7",
+      "bytes": 550,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-08-incrementAA6/stdout.log"
+    },
+    {
+      "path": "results/raw/formal-08/summary.json",
+      "sha256": "0044792ed6e7555fa31a55788d05704a5126103a4adae31f9860c1d7dd854dba",
+      "bytes": 863,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-08-incrementAA6/summary.json"
+    },
+    {
+      "path": "results/raw/formal-09/history.csv",
+      "sha256": "d17f7405fb2b2a71715f784d383cdcfe74e175aafaf923980f55137164c4c28c",
+      "bytes": 8570,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-09-incrementAA6/history.csv"
+    },
+    {
+      "path": "results/raw/formal-09/stdout.log",
+      "sha256": "fcc253829500ea820934447cd91fd470df593ec918e9bf5925d131c1a7afbb53",
+      "bytes": 549,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-09-incrementAA6/stdout.log"
+    },
+    {
+      "path": "results/raw/formal-09/summary.json",
+      "sha256": "09488459300d676627c31cf7dd705c93d5bbf1ffcc2421c396f80a65e20a971d",
+      "bytes": 862,
+      "archive_member": "contest-submission-20261026-v1/01-运行日志/cylinder-971888/formal-09-incrementAA6/summary.json"
+    }
+  ]
+}
