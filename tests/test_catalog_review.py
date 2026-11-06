@@ -24,6 +24,9 @@ class CatalogReview(unittest.TestCase):
             shutil.copytree(ROOT / folder, self.root / folder)
         for name in ("CONTRIBUTING.md", "LICENSE"):
             shutil.copyfile(ROOT / name, self.root / name)
+        media_docs = self.root / "media/product-intro"
+        media_docs.mkdir(parents=True)
+        shutil.copyfile(ROOT / "media/product-intro/README.md", media_docs / "README.md")
         shutil.copyfile(ROOT / "catalog-config.json", self.root / "catalog-config.json")
         (self.root / "README.md").write_text("# Projects\n<!-- PROJECTS:START -->\n<!-- PROJECTS:END -->\n", encoding="utf-8")
         (self.root / "site").mkdir()

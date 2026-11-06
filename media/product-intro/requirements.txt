@@ -1,0 +1,5 @@
+# Optional: needed only to regenerate the narrated score, not to play the film.
+edge-tts==7.3.1
+numpy==2.5.1
+fonttools==4.63.0
+brotli==1.2.0

@@ -1,0 +1,30 @@
+{
+  "schema_version": 2,
+  "duration_seconds": 30.0,
+  "width": 1920,
+  "height": 1080,
+  "edit": "v2-30s",
+  "bpm": 140,
+  "fps": 30,
+  "hyperframes_version": "0.9.19",
+  "video_codec": "h264",
+  "audio": "AAC stereo 48 kHz; synthetic Chinese narration and procedurally synthesized score",
+  "captions": "Dedicated burned-in caption rail; optional WebVTT and mov_text tracks, off by default",
+  "files": [
+    {
+      "path": "engineering-research-prototypes-intro.mp4",
+      "bytes": 9656175,
+      "sha256": "95daae912fd6802f2811b91537bffdf4c6a513174045352c7a8cb482424a7098"
+    },
+    {
+      "path": "engineering-research-prototypes-intro-poster.jpg",
+      "bytes": 73005,
+      "sha256": "cf9c59ad2727f5463f45e830837cc0d25f3305fa095fccb652e32a0a98209bcc"
+    },
+    {
+      "path": "engineering-research-prototypes-intro.zh.vtt",
+      "bytes": 599,
+      "sha256": "100f82f8f7c02583d39110e06ece0f3845f68c2e2bfc95bf3366f9278a0b0a8f"
+    }
+  ]
+}

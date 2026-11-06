@@ -3,6 +3,8 @@ from pathlib import Path
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import unquote, urlsplit
 import argparse
+import os
+import re
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,10 +36,63 @@ class PreviewHandler(SimpleHTTPRequestHandler):
         super().__init__(*args, directory=str(ROOT), **kwargs)
 
     def send_head(self):
-        if preview_path(self.path, ROOT, self.allowed_files) is None:
+        self._byte_range = None
+        target = preview_path(self.path, ROOT, self.allowed_files)
+        if target is None:
             self.send_error(404)
             return None
+        requested = self.headers.get("Range")
+        if requested:
+            size = target.stat().st_size
+            match = re.fullmatch(r"bytes=(\d*)-(\d*)", requested.strip())
+            start, end = 0, size - 1
+            if match and any(match.groups()):
+                first, last = match.groups()
+                if first:
+                    start = int(first)
+                    end = min(int(last), end) if last else end
+                elif int(last):
+                    start = max(0, size - int(last))
+                else:
+                    start = size
+            else:
+                start = size
+            if start > end or start >= size:
+                self.send_response(416)
+                self.send_header("Content-Range", f"bytes */{size}")
+                self.send_header("Content-Length", "0")
+                self.end_headers()
+                return None
+            stream = target.open("rb")
+            stream.seek(start)
+            self._byte_range = (start, end)
+            self.send_response(206)
+            self.send_header("Content-Type", self.guess_type(str(target)))
+            self.send_header("Content-Range", f"bytes {start}-{end}/{size}")
+            self.send_header("Content-Length", str(end - start + 1))
+            self.send_header("Last-Modified", self.date_time_string(os.fstat(stream.fileno()).st_mtime))
+            self.end_headers()
+            return stream
         return super().send_head()
+
+    def end_headers(self):
+        self.send_header("Accept-Ranges", "bytes")
+        super().end_headers()
+
+    def copyfile(self, source, outputfile):
+        try:
+            if self._byte_range is None:
+                return super().copyfile(source, outputfile)
+            remaining = self._byte_range[1] - self._byte_range[0] + 1
+            while remaining:
+                block = source.read(min(65536, remaining))
+                if not block:
+                    break
+                outputfile.write(block)
+                remaining -= len(block)
+        except (BrokenPipeError, ConnectionResetError):
+            # Browsers cancel outstanding media requests when seeking.
+            pass
 
     def translate_path(self, path):
         # Use exactly the same normalized target for validation and actual reads.

@@ -21,5 +21,43 @@
     "request_url": "https://github.com/yuguo-Jack/engineering-research-prototypes/issues/new?template=research-request.yml",
     "issues_url": "https://github.com/yuguo-Jack/engineering-research-prototypes/issues",
     "support_image": "assets/support/alipay.jpg"
+  },
+  "intro_video": {
+    "src": "assets/video/engineering-research-prototypes-intro.mp4",
+    "poster": "assets/video/engineering-research-prototypes-intro-poster.jpg",
+    "captions": "assets/video/engineering-research-prototypes-intro.zh.vtt",
+    "chapters": [
+      {
+        "start": 0.0,
+        "time": "00:00",
+        "label": "工程思路"
+      },
+      {
+        "start": 6.0,
+        "time": "00:06",
+        "label": "目录架构"
+      },
+      {
+        "start": 8.566667,
+        "time": "00:08",
+        "label": "应用场景"
+      },
+      {
+        "start": 11.133333,
+        "time": "00:11",
+        "label": "圆柱案例"
+      },
+      {
+        "start": 15.433333,
+        "time": "00:15",
+        "label": "M6 案例"
+      },
+      {
+        "start": 20.566667,
+        "time": "00:20",
+        "label": "如何复现"
+      }
+    ],
+    "version": "v2-30s"
   }
 }

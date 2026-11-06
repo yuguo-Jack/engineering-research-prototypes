@@ -1,0 +1,11 @@
+{
+  "name": "engineering-research-prototypes-intro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "hyperframes preview",
+    "check": "hyperframes check",
+    "render": "hyperframes render --fps 30 --workers 2 --crf 24"
+  },
+  "devDependencies": {"hyperframes": "0.9.19"}
+}

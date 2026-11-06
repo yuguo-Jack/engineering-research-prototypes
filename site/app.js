@@ -22,6 +22,23 @@
   search?.addEventListener("input", applyFilter);
   for (const button of filters) button.addEventListener("click", () => { domain = button.dataset.filter; applyFilter(); });
   document.querySelector("#clear-search")?.addEventListener("click", () => { search.value = ""; domain = "all"; applyFilter(); search.focus(); });
+  const film = document.querySelector("#intro-film");
+  for (const button of document.querySelectorAll("[data-video-seek]")) {
+    button.addEventListener("click", () => {
+      const status = document.querySelector("#video-status");
+      const seek = () => {
+        film.currentTime = Number(button.dataset.videoSeek);
+        status.textContent = "";
+        film.play().catch(() => { status.textContent = "已定位章节，点击播放器开始播放。"; });
+      };
+      if (film.readyState >= 1) seek();
+      else {
+        film.addEventListener("loadedmetadata", seek, { once: true });
+        film.load();
+      }
+      film.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  }
   for (const button of document.querySelectorAll("[data-copy]")) {
     button.addEventListener("click", async () => {
       const code = button.parentElement.querySelector("pre code");

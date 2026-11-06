@@ -1,0 +1,94 @@
+{
+  "title": "Engineering Research Prototypes · 30-second launch film",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "duration": 30,
+  "bpm": 140,
+  "voice": "zh-CN-YunxiNeural",
+  "voice_rate": "+20%",
+  "scenes": [
+    {
+      "id": "hook",
+      "chapter": "想法动起来",
+      "start_frame": 0,
+      "end_frame": 51,
+      "narration": "让想法，成为工程原型。",
+      "caption": "让想法，成为工程原型。",
+      "voice_end_frame": 103
+    },
+    {
+      "id": "brand",
+      "chapter": "工程原型",
+      "start_frame": 51,
+      "end_frame": 103,
+      "narration": "",
+      "caption": "独立实现 · 可验证 · 可复现"
+    },
+    {
+      "id": "pipeline",
+      "chapter": "工程思路",
+      "start_frame": 103,
+      "end_frame": 180,
+      "narration": "实现、验证，再复现。",
+      "caption": "从问题到实现、验证与复现。"
+    },
+    {
+      "id": "architecture",
+      "chapter": "目录架构",
+      "start_frame": 180,
+      "end_frame": 257,
+      "narration": "一项成果，一个独立目录。",
+      "caption": "一项成果，一个独立目录。"
+    },
+    {
+      "id": "scenarios",
+      "chapter": "应用方向",
+      "start_frame": 257,
+      "end_frame": 334,
+      "narration": "多领域，开放收录。",
+      "caption": "通信雷达 · 机器人 · 嵌入式 · 流体计算"
+    },
+    {
+      "id": "cylinder",
+      "chapter": "圆柱案例",
+      "start_frame": 334,
+      "end_frame": 463,
+      "narration": "圆柱绕流，六十六步收敛。",
+      "caption": "单核求解，留下可核对的结果。"
+    },
+    {
+      "id": "m6",
+      "chapter": "M6 案例",
+      "start_frame": 463,
+      "end_frame": 617,
+      "narration": "M六机翼，三十二路并行，保留完整运行记录。",
+      "caption": "32 MPI 并行 · 完整记录 400 步。"
+    },
+    {
+      "id": "reproduce",
+      "chapter": "复现路径",
+      "start_frame": 617,
+      "end_frame": 720,
+      "narration": "源码、环境、结果，都能找到。",
+      "caption": "带上源码、环境和结果，让别人照着跑。"
+    },
+    {
+      "id": "invite",
+      "chapter": "欢迎提需求",
+      "start_frame": 720,
+      "end_frame": 797,
+      "narration": "欢迎提需求。下一个原型，来自你的问题。",
+      "caption": "欢迎提需求，下一个原型来自你的问题。",
+      "voice_end_frame": 900
+    },
+    {
+      "id": "closing",
+      "chapter": "一起做出来",
+      "start_frame": 797,
+      "end_frame": 900,
+      "narration": "",
+      "caption": "工程研究原型 · 一起把想法做出来。"
+    }
+  ]
+}

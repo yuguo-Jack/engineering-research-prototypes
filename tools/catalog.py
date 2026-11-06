@@ -96,6 +96,20 @@ def community_section(config):
 </section>'''
 
 
+def intro_video_section(config):
+    video = config.get("intro_video")
+    if not video:
+        return ""
+    version = "?v=" + e(video.get("version", "current"))
+    chapters = ''.join(f'<button type="button" data-video-seek="{e(chapter["start"])}"><span>{e(chapter["time"])}</span>{e(chapter["label"])}</button>' for chapter in video["chapters"])
+    return f'''<section id="intro-video" class="intro-video-section" aria-labelledby="intro-video-title">
+<div class="section-heading"><div><p class="eyebrow">THE IDEA IN MOTION</p><h2 id="intro-video-title">30 秒，让想法动起来。</h2></div><p>工程思路 · 组织架构 · 应用方向 · 两个真实案例</p></div>
+<div class="intro-video-frame"><video id="intro-film" controls playsinline preload="metadata" poster="{e(video['poster'])}{version}" aria-label="工程研究原型30秒介绍，中文旁白及独立底栏字幕"><source src="{e(video['src'])}{version}" type="video/mp4"><track kind="captions" src="{e(video['captions'])}{version}" srclang="zh" label="逐字旁白（画面已有底栏字幕）">当前浏览器无法播放视频。<a href="{e(video['src'])}">下载 MP4 观看</a>。</video></div>
+<div class="video-meta"><span>00:30 · 1080p · 140 BPM · 中文字幕独立底栏</span><a class="quiet-link" href="{e(video['src'])}">单独打开视频 ↗</a></div>
+<div class="video-chapters" role="group" aria-label="跳转到视频章节">{chapters}</div><p id="video-status" class="video-status" role="status" aria-live="polite"></p>
+</section>'''
+
+
 def card(project, config):
     slug = project["id"]
     image = f'<img src="projects/{slug}/{e(project["hero"])}" alt="{e(project["title"])}关键结果" width="700" height="420" loading="lazy">' if project.get("hero") else '<div class="text-cover">原型整理中</div>'
@@ -114,6 +128,7 @@ def overview(config, projects):
     publication_note = "持续积累 · 当前为本地预览" if config.get("preview", False) else "持续积累 · 可复现工程原型"
     return shell(config["title"] + " · " + config["name"], f'''
 <section class="hero"><div><p class="eyebrow">{e(config["name"].upper())}</p><h1>让灵感成为<br><em>可复现的工程原型。</em></h1><p class="hero-copy">记录做出来的东西，也留下让别人重新做出来的方法。<br>从计算模型到运行程序，从关键结果到验证证据。</p><div class="hero-actions"><a class="button primary" href="#projects">浏览研究成果 <span aria-hidden="true">↓</span></a><a class="quiet-link" href="CONTRIBUTING.md">了解组织方式 ↗</a></div><div class="hero-counts"><div><strong>{len(projects):02}</strong><span>独立成果</span></div><div><strong>{sum(p["status"] in ("reproduced", "archived") for p in projects):02}</strong><span>附验证记录</span></div><div><strong>01</strong><span>统一组织规则</span></div></div></div><aside class="hero-aside"><span class="aside-label">从想法到可以复现</span><ol class="pipeline"><li><span>01</span><div><strong>一个明确的问题</strong><p>目标、输入、范围与约束</p></div></li><li><span>02</span><div><strong>一个独立的原型</strong><p>源码、依赖与运行入口</p></div></li><li><span>03</span><div><strong>一份可核对的结果</strong><p>指标、图表与实际证据</p></div></li><li><span>04</span><div><strong>一条完整的复现路径</strong><p>从环境到运行，再到验证</p></div></li></ol><div class="aside-footer"><span class="dot"></span>{e(publication_note)}</div></aside></section>
+{intro_video_section(config)}
 <section id="projects" class="projects-section"><div class="section-heading"><div><p class="eyebrow">PROJECT COLLECTION</p><h2>已有成果</h2></div><p>每个项目独立运行，结果有据可查。</p></div><div class="collection-toolbar"><div class="filters" role="group" aria-label="按领域筛选">{filters}</div><label class="search"><span>搜索成果</span><input id="project-search" type="search" placeholder="名称、领域或技术关键词" autocomplete="off"></label></div><p id="result-count" class="result-count" aria-live="polite">共 {len(projects)} 项成果</p><div id="project-grid" class="project-grid">{cards}</div><div id="empty-state" class="empty-state" hidden><h3>暂时没有匹配成果</h3><p>换一个关键词，或返回全部成果。</p><button type="button" id="clear-search">清除筛选</button></div></section>
 <section id="reproduce" class="reproduce-section"><div><p class="eyebrow">REPRODUCIBLE BY DESIGN</p><h2>能看到结果，<br>也能找到如何运行。</h2><p>每项成果都说明已验证到哪一步。历史测量、当前检查和外部参考各有清晰口径。</p><a class="quiet-link" href="docs/REPRODUCIBILITY.md">阅读复现约定 ↗</a></div><div class="reproduce-grid"><article><span>01 / ENVIRONMENT</span><h3>环境与依赖</h3><p>系统、工具链、版本和安装条件；可选依赖按需准备。</p></article><article><span>02 / EXECUTION</span><h3>构建与运行</h3><p>完整命令、明确输入和新的输出目录，单项成果可独立使用。</p></article><article><span>03 / EVIDENCE</span><h3>结果与证据</h3><p>原始数值、图表和验证记录，说明指标与比较边界。</p></article><article><span>04 / DATA</span><h3>输入与来源</h3><p>公开数据与外部资料分别声明，获取条件和校验路径明确。</p></article></div></section>
 <section class="future-section"><div><p class="eyebrow">ROOM FOR THE NEXT IDEA</p><h2>为下一项成果留好位置。</h2><p>从模板开始，沿用同一套组织方式。以下是后续可收录的方向。</p></div><div class="directions">{directions}</div><a class="button secondary" href="_templates/project/README.md">查看项目模板 ↗</a></section>
@@ -151,6 +166,9 @@ def generated_files(root=ROOT):
     config, projects = load_projects(root)
     if config.get("community"):
         local_file(root, config["community"]["support_image"])
+    if config.get("intro_video"):
+        for key in ("src", "poster", "captions"):
+            local_file(root, config["intro_video"][key])
     files = {"index.html": overview(config, projects), "site/catalog.json": json.dumps({"schema_version": 1, "projects": projects}, ensure_ascii=False, indent=2) + "\n"}
     for project in projects:
         files[f'site/projects/{project["id"]}.html'] = detail(project, config)
