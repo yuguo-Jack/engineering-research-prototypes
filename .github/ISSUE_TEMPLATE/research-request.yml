@@ -1,0 +1,30 @@
+name: 提一个工程需求
+description: 分享想做的原型、想验证的算法或实际工程问题，一句话的想法也欢迎。
+title: "[需求] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎带来你的工程问题或原型想法！无需先写完整技术方案，一句话也可以，后续一起补充细节。
+        新想法、算法验证、工具适配和复现问题都欢迎；欢迎自由交流，打赏仅为自愿支持。
+  - type: textarea
+    id: goal
+    attributes:
+      label: 你想解决什么问题？
+      placeholder: 比如，我想验证一个雷达处理算法，或做一个机械臂控制原型……
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: 已有条件或参考（选填）
+      description: 可以补充可公开的数据、设备型号、运行环境、论文或类似项目。
+    validations:
+      required: false
+  - type: textarea
+    id: expected-result
+    attributes:
+      label: 希望得到什么结果？（选填）
+      placeholder: 比如可运行的原型、算法验证、图表、复现说明或某项指标。
+    validations:
+      required: false

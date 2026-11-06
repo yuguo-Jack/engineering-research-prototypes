@@ -85,6 +85,17 @@ def metric_tiles(project):
     return ''.join(f'<div class="metric"><span class="metric-label">{e(m["label"])}</span><strong>{e(m["value"])}<small>{e(m.get("unit", ""))}</small></strong><span class="metric-note">{e(m.get("note", ""))}</span></div>' for m in project.get("highlights", []))
 
 
+def community_section(config):
+    community = config.get("community")
+    if not community:
+        return ""
+    image = e(community["support_image"])
+    return f'''<section id="community" class="community-section" aria-labelledby="community-title">
+<div class="community-copy"><p class="eyebrow">YOUR NEXT ENGINEERING IDEA</p><h2 id="community-title">有工程问题或原型想法？<br>欢迎来提需求。</h2><p>想验证的算法、希望做出的原型、工具适配或复现中遇到的问题，都欢迎在 Issues 里交流。一句话的想法也可以，后续再一起补充细节。</p><p>可以聊聊：你想解决什么问题、手头有哪些数据或设备，以及希望得到什么结果。大家的真实需求，会帮助这里选择下一项值得做的工程原型。</p><div class="community-actions"><a class="button primary" href="{e(community['request_url'])}">提一个工程需求 ↗</a><a class="quiet-link" href="{e(community['issues_url'])}">看看已有需求 ↗</a></div><p class="community-note">欢迎提想法、反馈问题、分享应用场景，也欢迎一起交流与共建。</p></div>
+<aside id="support" class="support-panel" aria-label="支付宝自愿打赏"><h3>支持项目维护</h3><p>如果这里的原型对你有帮助，欢迎自愿打赏，支持后续维护与新原型探索。</p><a class="support-image-link" href="{image}" aria-label="查看支付宝收款码原图"><img src="{image}" alt="支付宝打赏收款码，点击查看原图" width="200" height="300" loading="lazy"></a><p class="support-caption">支付宝 · 完全自愿<br><a href="{image}">点击查看大图，或保存后用支付宝识别</a></p></aside>
+</section>'''
+
+
 def card(project, config):
     slug = project["id"]
     image = f'<img src="projects/{slug}/{e(project["hero"])}" alt="{e(project["title"])}关键结果" width="700" height="420" loading="lazy">' if project.get("hero") else '<div class="text-cover">原型整理中</div>'
@@ -106,6 +117,7 @@ def overview(config, projects):
 <section id="projects" class="projects-section"><div class="section-heading"><div><p class="eyebrow">PROJECT COLLECTION</p><h2>已有成果</h2></div><p>每个项目独立运行，结果有据可查。</p></div><div class="collection-toolbar"><div class="filters" role="group" aria-label="按领域筛选">{filters}</div><label class="search"><span>搜索成果</span><input id="project-search" type="search" placeholder="名称、领域或技术关键词" autocomplete="off"></label></div><p id="result-count" class="result-count" aria-live="polite">共 {len(projects)} 项成果</p><div id="project-grid" class="project-grid">{cards}</div><div id="empty-state" class="empty-state" hidden><h3>暂时没有匹配成果</h3><p>换一个关键词，或返回全部成果。</p><button type="button" id="clear-search">清除筛选</button></div></section>
 <section id="reproduce" class="reproduce-section"><div><p class="eyebrow">REPRODUCIBLE BY DESIGN</p><h2>能看到结果，<br>也能找到如何运行。</h2><p>每项成果都说明已验证到哪一步。历史测量、当前检查和外部参考各有清晰口径。</p><a class="quiet-link" href="docs/REPRODUCIBILITY.md">阅读复现约定 ↗</a></div><div class="reproduce-grid"><article><span>01 / ENVIRONMENT</span><h3>环境与依赖</h3><p>系统、工具链、版本和安装条件；可选依赖按需准备。</p></article><article><span>02 / EXECUTION</span><h3>构建与运行</h3><p>完整命令、明确输入和新的输出目录，单项成果可独立使用。</p></article><article><span>03 / EVIDENCE</span><h3>结果与证据</h3><p>原始数值、图表和验证记录，说明指标与比较边界。</p></article><article><span>04 / DATA</span><h3>输入与来源</h3><p>公开数据与外部资料分别声明，获取条件和校验路径明确。</p></article></div></section>
 <section class="future-section"><div><p class="eyebrow">ROOM FOR THE NEXT IDEA</p><h2>为下一项成果留好位置。</h2><p>从模板开始，沿用同一套组织方式。以下是后续可收录的方向。</p></div><div class="directions">{directions}</div><a class="button secondary" href="_templates/project/README.md">查看项目模板 ↗</a></section>
+{community_section(config)}
 ''', config=config)
 
 
@@ -137,6 +149,8 @@ def detail(project, config):
 
 def generated_files(root=ROOT):
     config, projects = load_projects(root)
+    if config.get("community"):
+        local_file(root, config["community"]["support_image"])
     files = {"index.html": overview(config, projects), "site/catalog.json": json.dumps({"schema_version": 1, "projects": projects}, ensure_ascii=False, indent=2) + "\n"}
     for project in projects:
         files[f'site/projects/{project["id"]}.html'] = detail(project, config)

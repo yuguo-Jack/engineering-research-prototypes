@@ -16,5 +16,10 @@
     "嵌入式算法与部署"
   ],
   "preview": false,
-  "repository_url": "https://github.com/yuguo-Jack/engineering-research-prototypes"
+  "repository_url": "https://github.com/yuguo-Jack/engineering-research-prototypes",
+  "community": {
+    "request_url": "https://github.com/yuguo-Jack/engineering-research-prototypes/issues/new?template=research-request.yml",
+    "issues_url": "https://github.com/yuguo-Jack/engineering-research-prototypes/issues",
+    "support_image": "assets/support/alipay.jpg"
+  }
 }

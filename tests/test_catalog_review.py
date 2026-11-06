@@ -20,7 +20,7 @@ class CatalogReview(unittest.TestCase):
         (ROOT / ".local").mkdir(exist_ok=True)
         self.temporary = tempfile.TemporaryDirectory(prefix="catalog-review-", dir=ROOT / ".local")
         self.root = Path(self.temporary.name)
-        for folder in ("_templates", "schemas", "docs"):
+        for folder in ("_templates", "schemas", "docs", "assets"):
             shutil.copytree(ROOT / folder, self.root / folder)
         for name in ("CONTRIBUTING.md", "LICENSE"):
             shutil.copyfile(ROOT / name, self.root / name)

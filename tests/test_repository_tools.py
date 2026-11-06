@@ -32,6 +32,7 @@ class RepositoryTools(unittest.TestCase):
         self.root = Path(self.temporary.name)
         shutil.copytree(ROOT / "_templates", self.root / "_templates")
         shutil.copytree(ROOT / "schemas", self.root / "schemas")
+        shutil.copytree(ROOT / "assets", self.root / "assets")
         shutil.copyfile(ROOT / "catalog-config.json", self.root / "catalog-config.json")
         (self.root / "README.md").write_text("# Example\n<!-- PROJECTS:START -->\n<!-- PROJECTS:END -->\n", encoding="utf-8")
 

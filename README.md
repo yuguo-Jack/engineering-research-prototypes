@@ -73,3 +73,22 @@ python tools/check_repo.py
 见 [资料与授权说明](docs/MATERIALS.md) 和各成果的 `LICENSE.md`。
 原始竞赛输入与参考文件按其来源授权管理，通过项目的数据清单从本地授权归档导入，
 不随 Git 仓库分发。当前保留各材料权利，未授予统一的开源许可。
+
+## 欢迎提需求与支持
+
+**有工程问题或原型想法，欢迎来提需求！** 想验证的算法、希望做出的原型、工具适配，
+或者复现中遇到的问题，都欢迎交流。一句话的想法也可以，后续再一起补充细节。
+
+可以聊聊你想解决什么问题、手头有哪些数据或设备，以及希望得到什么结果。
+大家的真实需求，会帮助这里选择下一项值得做的工程原型，也欢迎一起参与共建。
+
+**[提一个工程需求 ↗](https://github.com/yuguo-Jack/engineering-research-prototypes/issues/new?template=research-request.yml)** ·
+[看看已有需求](https://github.com/yuguo-Jack/engineering-research-prototypes/issues)
+
+### 支持项目维护（自愿）
+
+如果这里的原型对你有帮助，欢迎通过支付宝自愿打赏，支持后续维护与新原型探索。
+
+<a href="https://yuguo-jack.github.io/engineering-research-prototypes/assets/support/alipay.jpg"><img src="assets/support/alipay.jpg" alt="支付宝打赏收款码，点击查看原图" width="240"></a>
+
+点击二维码查看大图，或保存后用支付宝识别。打赏完全自愿，欢迎大家自由提需求、交流和共建。
