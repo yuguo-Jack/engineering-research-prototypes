@@ -13,11 +13,14 @@ jobs:
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.12'
-      - run: python tools/check_repo.py
+      - run: python -m pip install -r requirements.txt
+      - run: python tools/check_repo.py --release
       - run: python tools/catalog.py --check
       - run: python -m unittest discover -s tests -v
       - run: python projects/cylinder-flow/reproduce.py verify-results
       - run: python projects/m6-wing/reproduce.py verify-results
+      - run: python projects/cylinder-flow/scripts/validate_run.py projects/cylinder-flow/results/raw/formal-01
+      - run: python projects/m6-wing/scripts/validate_run.py projects/m6-wing/results/raw
   numerical-core:
     runs-on: ubuntu-latest
     strategy:

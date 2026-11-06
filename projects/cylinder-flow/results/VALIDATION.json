@@ -16,5 +16,12 @@
   "logs": "Local build/ctest.log and build/compile.log; generated logs are not distributed.",
   "new_run_checker": "passed_current_original_initial_66_step_run",
   "test_repetition": "passed_via_independent_entry_point",
-  "standalone_directory_build_and_core_tests": "passed_from_fresh_git_checkout"
+  "standalone_directory_build_and_core_tests": "passed_from_fresh_git_checkout",
+  "publication_review": {
+    "date": "2026-11-06",
+    "fresh_rebuild": "passed",
+    "numerical_core_test_repetition": "passed_twice",
+    "unconfigured_empty_test_control": "rejected_as_expected",
+    "new_run_binary_and_input_identity": "verified_current_run"
+  }
 }

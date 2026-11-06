@@ -1,14 +1,16 @@
-# Engineering Research Ideas · 工程研究灵感
+# Engineering Research Prototypes · 工程研究原型
 
 把灵感做成可运行、可核对、可复现的工程原型。
 
 An independent collection of engineering prototypes, with source, reproducible
 entry points, measured results, and explicit environment/data requirements.
 
-**[打开成果总览](index.html)** · [组织规则](CONTRIBUTING.md) ·
-[复现等级](docs/REPRODUCIBILITY.md) · [新增成果模板](_templates/project/README.md)
+**[在线成果总览](https://yuguo-jack.github.io/engineering-research-prototypes/)** ·
+[离线总览](index.html) · [组织规则](CONTRIBUTING.md) ·
+[复现等级](docs/REPRODUCIBILITY.md) · [收录与发布](docs/PUBLISHING.md) ·
+[新增成果模板](_templates/project/README.md)
 
-当前是本地审阅版本。每个 `projects/<id>/` 是一个独立成果，拥有自己的源码、
+每个 `projects/<id>/` 是一个独立成果，拥有自己的源码、
 依赖、构建入口、结果和说明；复制单个目录即可进行该成果的工作。
 
 ## 已收录成果
@@ -30,12 +32,17 @@ entry points, measured results, and explicit environment/data requirements.
 3. 仅想核对已保存结果时，执行项目内的 `python reproduce.py verify-results`。
 
 ```powershell
-python tools/check_repo.py
+git clone https://github.com/yuguo-Jack/engineering-research-prototypes.git
+cd engineering-research-prototypes
+python -m pip install -r requirements.txt
+python tools/check_repo.py --release
 python tools/catalog.py --check
 python tools/preview.py --port 8765
 ```
 
 预览地址为 `http://127.0.0.1:8765`；退出时按 Ctrl+C。静态总览也可直接从文件打开。
+仓库维护工具使用 Python 3.10+ 和 Git；根目录依赖仅用于文档生成和元数据检查。
+各原型运行依赖由各自目录独立声明，不需要为数值求解安装这些文档工具。
 
 ```text
 projects/<id>/       独立成果：代码、环境、复现方法、结果、来源
@@ -63,4 +70,4 @@ python tools/check_repo.py
 
 见 [资料与授权说明](docs/MATERIALS.md) 和各成果的 `LICENSE.md`。
 原始竞赛输入与参考文件按其来源授权管理，通过项目的数据清单从本地授权归档导入，
-不随 Git 仓库分发。此预览未为继承的源码新增开源授权。
+不随 Git 仓库分发。当前保留各材料权利，未授予统一的开源许可。

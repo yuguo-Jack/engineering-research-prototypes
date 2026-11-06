@@ -97,6 +97,32 @@ def preserve_probe_output():
         shutil.copyfile(log, destination / "previous-ctest.log")
 
 
+def run_identity(binary):
+    """Capture inputs, configuration and actual binary identity before timed execution."""
+    source_manifest = ROOT / "SOURCE_MANIFEST.json"
+    source = json.loads(source_manifest.read_text(encoding="utf-8"))
+    source_matches = True
+    for name, expected in source["files"].items():
+        path = (ROOT / name).resolve()
+        if not path.is_relative_to(ROOT):
+            raise ValueError("Source manifest path escapes this project")
+        source_matches &= path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest() == expected["sha256"]
+    cache = BUILD / "CMakeCache.txt"
+    return {
+        "schema_version": 1,
+        "binary_sha256": hashlib.sha256(binary.read_bytes()).hexdigest(),
+        "source_revision": source.get("source_revision", source.get("revision")),
+        "source_manifest_sha256": hashlib.sha256(source_manifest.read_bytes()).hexdigest(),
+        "source_files_match_recorded_manifest": bool(source_matches),
+        "input_manifest_sha256": hashlib.sha256((ROOT / "data/manifest.json").read_bytes()).hexdigest(),
+        "build_cache_sha256": hashlib.sha256(cache.read_bytes()).hexdigest() if cache.is_file() else None,
+        "profile": CASE,
+        "omp_num_threads": 1,
+        "platform": platform.platform(),
+        "python": platform.python_version(),
+    }
+
+
 def verify_results():
     metrics = json.loads((ROOT / "results/metrics.json").read_text(encoding="utf-8"))
     provenance = json.loads((ROOT / "results/PROVENANCE.json").read_text(encoding="utf-8"))
@@ -181,7 +207,7 @@ def main():
         print(json.dumps({"status": "built", "binary": str(executable()), "native": args.native}, ensure_ascii=False))
     elif args.action == "test":
         preserve_probe_output()
-        execute(["ctest", "--test-dir", str(BUILD), "-C", "Release", "--output-on-failure"], "ctest", env)
+        execute(["ctest", "--test-dir", str(BUILD), "-C", "Release", "--output-on-failure", "--no-tests=error"], "ctest", env)
         print(json.dumps({"status": "passed", "scope": "numerical_core_tests", "log": "build/ctest.log"}))
     elif args.action == "run":
         data_dir = ROOT / "data/external"
@@ -204,11 +230,12 @@ def main():
         if args.dry_run:
             print(json.dumps({"command": command, "creates_output": False}, ensure_ascii=False, indent=2))
             return
+        identity = run_identity(executable())
         output.mkdir(parents=True, exist_ok=True)
         started = time.perf_counter()
         with (output / "stdout.log").open("w", encoding="utf-8") as stdout, (output / "stderr.log").open("w", encoding="utf-8") as stderr:
             result = subprocess.run(command, cwd=ROOT, env=env, stdout=stdout, stderr=stderr)
-        report = {"returncode": result.returncode, "command": command, "process_seconds": time.perf_counter()-started, "timing_scope": "current_local_run_not_archived_formal_measurement"}
+        report = {**identity, "returncode": result.returncode, "command": command, "process_seconds": time.perf_counter()-started, "timing_scope": "current_local_run_not_archived_formal_measurement"}
         write_json(output / "run-record.json", report)
         if result.returncode:
             raise RuntimeError("Solver failed; see output logs")

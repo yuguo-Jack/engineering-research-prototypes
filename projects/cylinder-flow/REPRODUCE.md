@@ -75,6 +75,9 @@ python reproduce.py check-run --output runs/my-first-run
 运行固定使用 profiles/benchmark.json，保存 stdout.log、stderr.log、run-record.json 和
 程序产生的数值结果。完整工况从原始初场开始，不用参考终场初始化。
 
+run-record.json 另记录实际二进制、输入清单和源码清单的 SHA256、源码一致性、
+完整运行配置、平台及进程返回码。身份采样在求解进程计时前完成。
+
 资源：一个物理核。正式输入约 0.22 MB；一个新运行目录通常较小。
 
 ## 5. 结果与绘图

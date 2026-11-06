@@ -6,8 +6,8 @@
       "domain": "cfd",
       "status": "archived",
       "version": "1.0.0",
-      "license": "LicenseRef-Author-Review",
-      "release_review_required": true,
+      "license": "LicenseRef-All-Rights-Reserved",
+      "release_review_required": false,
       "language": [
         "C++17",
         "Python"
@@ -72,15 +72,16 @@
         "python reproduce.py build --jobs 2",
         "python reproduce.py test",
         "python reproduce.py verify-results"
-      ]
+      ],
+      "source_manifest": "SOURCE_MANIFEST.json"
     },
     {
       "schema_version": 1,
       "domain": "cfd",
       "status": "archived",
       "version": "1.0.0",
-      "license": "LicenseRef-Author-Review",
-      "release_review_required": true,
+      "license": "LicenseRef-All-Rights-Reserved",
+      "release_review_required": false,
       "language": [
         "C++17",
         "Python"
@@ -150,7 +151,8 @@
         "python reproduce.py build --jobs 2",
         "python reproduce.py test",
         "python reproduce.py verify-results"
-      ]
+      ],
+      "source_manifest": "SOURCE_MANIFEST.json"
     }
   ]
 }

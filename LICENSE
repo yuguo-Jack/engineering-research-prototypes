@@ -1,9 +1,11 @@
-Repository licensing status: local review / no public redistribution license selected.
+All rights reserved by the respective rights holders.
 
-No repository-wide open-source license is granted by this preview. Existing rights
-in imported project source and external materials remain with their respective
-holders. Each project's LICENSE.md records its current scope and status.
+This repository is published to present engineering prototypes, their source,
+reproduction instructions, and recorded results. Publication does not grant a
+repository-wide open-source license. Rights in source, documents, figures, and
+external materials remain with their respective holders.
 
-Before public distribution, the owner must select applicable licenses for material
-they are authorized to license. Dependency licenses and external-data permissions
-remain separate. No third-party permissions are created by this repository.
+Each project's LICENSE.md describes its scope. Platform terms and any separately
+granted permissions remain applicable. Contact the repository maintainer for uses
+requiring additional permission. Third-party dependency and data licenses remain
+separate; this notice grants no new rights to those materials.

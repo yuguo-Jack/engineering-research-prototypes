@@ -1,0 +1,4 @@
+# Repository documentation and metadata checks only.
+# Individual prototypes declare their own independent dependencies.
+Markdown==3.10.2
+jsonschema==4.23.0

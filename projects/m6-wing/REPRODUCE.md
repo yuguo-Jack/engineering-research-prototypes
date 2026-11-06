@@ -83,6 +83,9 @@ python reproduce.py check-run --output runs/my-first-run
 运行固定使用 profiles/benchmark.json，保存 stdout.log、stderr.log、run-record.json 和
 程序产生的数值结果。完整工况从原始初场开始，不用参考终场初始化。
 
+run-record.json 另记录实际二进制、输入清单和源码清单的 SHA256、源码一致性、
+完整运行配置、平台及进程返回码。身份采样在求解进程计时前完成。
+
 资源：完整工况必须 32 个 MPI 进程。原始输入 66 文件、423,944,864 字节；完整检查点和稳定窗捕获会产生数 GiB 输出，建议先预留至少 10 GiB。历史性能环境为独占 128 物理核/8 NUMA，从中选择 32 个求解核；通用入口不重现该拓扑和绑定。
 
 历史百步捕获的全局有效数据峰值约 8.38 GB，此外还有网格、矩阵及 MPI 开销。

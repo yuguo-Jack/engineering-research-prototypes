@@ -66,3 +66,6 @@ MATLAB、Fluent 等原生临时目录；确认废弃的大文件当轮清理，�
 运行 `python tools/catalog.py` 和 `python tools/check_repo.py`；检查实际 Git 文件清单。
 执行适用的项目测试，并更新 `results/VALIDATION.json`。发布检查为
 `python tools/check_repo.py --release`，会额外核实授权状态；本地预览允许授权待确认。
+
+完整收录顺序见[发布说明](docs/PUBLISHING.md)。仓库维护工具依赖根目录 requirements.txt；
+每个成果自身的构建和运行依赖由其目录单独声明。草稿页不会假定存在 CFD 专用文件。

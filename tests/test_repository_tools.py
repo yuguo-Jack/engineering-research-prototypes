@@ -31,6 +31,7 @@ class RepositoryTools(unittest.TestCase):
         self.temporary = tempfile.TemporaryDirectory(prefix="unit-", dir=ROOT / ".local")
         self.root = Path(self.temporary.name)
         shutil.copytree(ROOT / "_templates", self.root / "_templates")
+        shutil.copytree(ROOT / "schemas", self.root / "schemas")
         shutil.copyfile(ROOT / "catalog-config.json", self.root / "catalog-config.json")
         (self.root / "README.md").write_text("# Example\n<!-- PROJECTS:START -->\n<!-- PROJECTS:END -->\n", encoding="utf-8")
 

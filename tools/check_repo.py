@@ -9,7 +9,7 @@ import re
 import subprocess
 import sys
 
-from catalog import ROOT, generated_files, load_projects, local_file
+from catalog import ROOT, generated_files, load_projects, local_file, obsolete_generated
 
 
 def candidate_files(root=ROOT):
@@ -17,7 +17,7 @@ def candidate_files(root=ROOT):
     return sorted({Path(name.decode("utf-8")) for name in result.stdout.split(b"\0") if name})
 
 
-def linked_file(root, source, target):
+def linked_file(root, source, target, public=None):
     if not target or target.startswith(("#", "mailto:", "data:")):
         return
     url = urlsplit(target)
@@ -30,6 +30,8 @@ def linked_file(root, source, target):
     path = path.resolve()
     if not path.is_relative_to(root.resolve()) or not path.exists():
         raise ValueError(f"Broken local link: {source.relative_to(root)} -> {target}")
+    if public is not None and path.is_file() and path.relative_to(root.resolve()).as_posix() not in public:
+        raise ValueError(f"Link targets an unpublished/ignored file: {source.relative_to(root)} -> {target}")
 
 
 class Links(HTMLParser):
@@ -70,8 +72,8 @@ def check(root=ROOT, release=False):
         directory = root / "projects" / project["id"]
         for doc in ("LICENSE.md", "DATA.md"):
             local_file(directory, doc)
-        source_manifest = directory / "SOURCE_MANIFEST.json"
-        if source_manifest.is_file():
+        if project.get("source_manifest"):
+            source_manifest = local_file(directory, project["source_manifest"])
             source = json.loads(source_manifest.read_text(encoding="utf-8"))
             check_manifest(directory, project["id"], [{"path": path, **record} for path, record in source["files"].items()])
         result_manifest = directory / "results/PROVENANCE.json"
@@ -79,15 +81,22 @@ def check(root=ROOT, release=False):
             check_manifest(directory, project["id"], json.loads(result_manifest.read_text(encoding="utf-8"))["files"])
         if project.get("release_review_required", True) or project["license"].startswith("LicenseRef-Author-Review"):
             warnings.append(project["id"] + ": author license/release review pending")
-    for name, expected in generated_files(root).items():
+    expected_files = generated_files(root)
+    if obsolete_generated(root, expected_files):
+        raise ValueError("Obsolete generated pages; run python tools/catalog.py")
+    for name, expected in expected_files.items():
         file = root / name
         if not file.is_file() or file.read_text(encoding="utf-8") != expected:
             raise ValueError("Generated overview is stale: " + name)
     files = candidate_files(root)
+    public = {name.as_posix() for name in files}
+    project_ids = {project["id"] for project in projects}
     total = 0
     text_extensions = {".md", ".json", ".py", ".cpp", ".hpp", ".h", ".txt", ".log", ".yml", ".yaml", ".html", ".css", ".js", ".csv", ".sh"}
     for relative in files:
         path = root / relative
+        if len(relative.parts) > 1 and relative.parts[0] == "projects" and relative.parts[1] not in project_ids:
+            raise ValueError("Unregistered project directory: " + relative.parts[1])
         if not path.is_file():
             raise ValueError("Staged deletion or missing candidate: " + str(relative))
         if path.is_symlink() or getattr(path, "is_junction", lambda: False)():
@@ -111,12 +120,12 @@ def check(root=ROOT, release=False):
                 raise ValueError("Private/local material requires review: " + str(relative))
             if path.suffix == ".md":
                 for target in re.findall(r"\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)", text):
-                    linked_file(root, path, target)
+                    linked_file(root, path, target, public)
             if path.suffix == ".html":
                 links = Links()
                 links.feed(text)
                 for target in links.targets:
-                    linked_file(root, path, target)
+                    linked_file(root, path, target, public)
     if release and warnings:
         raise ValueError("Release review incomplete: " + "; ".join(warnings))
     return {"status": "passed", "projects": len(projects), "candidate_files": len(files), "candidate_bytes": total, "release_review": warnings, "scope": "repository_and_recorded_artifacts_not_a_new_physical_solver_run"}

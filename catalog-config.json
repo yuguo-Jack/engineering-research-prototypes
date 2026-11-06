@@ -1,6 +1,6 @@
 {
-  "title": "工程研究灵感",
-  "name": "Engineering Research Ideas",
+  "title": "工程研究原型",
+  "name": "Engineering Research Prototypes",
   "tagline": "把灵感做成可复现的工程原型。",
   "domains": {
     "cfd": "计算流体",
@@ -15,5 +15,6 @@
     "机器人感知与控制",
     "嵌入式算法与部署"
   ],
-  "preview": true
+  "preview": false,
+  "repository_url": "https://github.com/yuguo-Jack/engineering-research-prototypes"
 }
