@@ -15,5 +15,6 @@
   "historical_linux_full_case": "archived_run_and_subsequent_recheck_available",
   "logs": "Local build/ctest.log and build/compile.log; generated logs are not distributed.",
   "new_run_checker": "passed_current_original_initial_66_step_run",
-  "test_repetition": "passed_via_independent_entry_point"
+  "test_repetition": "passed_via_independent_entry_point",
+  "standalone_directory_build_and_core_tests": "passed_from_fresh_git_checkout"
 }
