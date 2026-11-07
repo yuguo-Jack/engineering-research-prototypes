@@ -6,6 +6,7 @@ import shutil
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
@@ -27,6 +28,7 @@ class CatalogReview(unittest.TestCase):
         media_docs = self.root / "media/product-intro"
         media_docs.mkdir(parents=True)
         shutil.copyfile(ROOT / "media/product-intro/README.md", media_docs / "README.md")
+        shutil.copytree(ROOT / "media/product-intro/video", media_docs / "video")
         shutil.copyfile(ROOT / "catalog-config.json", self.root / "catalog-config.json")
         (self.root / "README.md").write_text("# Projects\n<!-- PROJECTS:START -->\n<!-- PROJECTS:END -->\n", encoding="utf-8")
         (self.root / "site").mkdir()
@@ -71,6 +73,20 @@ class CatalogReview(unittest.TestCase):
         files = catalog.generated_files(self.root)
         self.assertIn("radar-demo", files["site/docs/README.html"])
         self.assertIn('href="site/docs/projects/radar-demo/REPRODUCE.html"', files["index.html"])
+
+    def test_static_asset_urls_change_when_the_player_code_changes(self):
+        self.project()
+        with patch.object(catalog, "ROOT", self.root):
+            before = catalog.generated_files(self.root)["index.html"]
+            script = self.root / "site/app.js"
+            script.write_text(script.read_text(encoding="utf-8") + "\n// Updated player\n", encoding="utf-8")
+            after = catalog.generated_files(self.root)["index.html"]
+        before_links, after_links = check_repo.Links(), check_repo.Links()
+        before_links.feed(before)
+        after_links.feed(after)
+        before_url = next(target for target in before_links.targets if "site/app.js" in target)
+        after_url = next(target for target in after_links.targets if "site/app.js" in target)
+        self.assertNotEqual(before_url, after_url)
 
     def test_title_markup_stays_literal_in_the_readme_and_document_page(self):
         self.project('<img src=x onerror="bad()"> [prototype] | one')

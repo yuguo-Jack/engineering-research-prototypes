@@ -33,6 +33,9 @@ class RepositoryTools(unittest.TestCase):
         shutil.copytree(ROOT / "_templates", self.root / "_templates")
         shutil.copytree(ROOT / "schemas", self.root / "schemas")
         shutil.copytree(ROOT / "assets", self.root / "assets")
+        media = self.root / "media/product-intro"
+        media.mkdir(parents=True)
+        shutil.copytree(ROOT / "media/product-intro/video", media / "video")
         shutil.copyfile(ROOT / "catalog-config.json", self.root / "catalog-config.json")
         (self.root / "README.md").write_text("# Example\n<!-- PROJECTS:START -->\n<!-- PROJECTS:END -->\n", encoding="utf-8")
 

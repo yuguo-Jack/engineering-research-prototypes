@@ -16,6 +16,7 @@
 *.jpg binary
 *.pdf binary
 *.mp4 binary
+*.webm binary
 *.m4a binary
 *.woff2 binary
 *.vtt text eol=lf

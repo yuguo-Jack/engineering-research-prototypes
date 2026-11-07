@@ -3,8 +3,20 @@
 V2：**整整 30 秒，1920 × 1080、30 fps、140 BPM**。保留网站的深绿、暖白和
 橙色，用短句、旋转线框、立体目录、图形切入与真实结果曲线介绍工程。
 
-观看：[网页播放器](https://yuguo-jack.github.io/engineering-research-prototypes/#intro-video)。
-成片与校验清单在 `assets/video/`。本目录为可编辑、可重新渲染的源工程。
+观看：[网页播放器](https://yuguo-jack.github.io/engineering-research-prototypes/?v=player3#intro-video)。
+本目录统一保存视频源工程与播放成品：
+
+```text
+product-intro/
+  video/       网页成品：intro.webm、intro.mp4、poster.jpg、captions.zh.vtt、manifest.json
+  assets/      场量图、网站截图与音频母带
+  fonts/       字体子集及许可
+  *.py         音频、动画、字体与成品生成脚本
+  index.html   HyperFrames 动画源
+```
+
+网页优先使用 VP9/Opus WebM，并提供 H.264 Main/AAC MP4 兼容播放与下载。
+两个格式保持相同的 30 秒剪辑、1080p 画面和独立底栏字幕。
 
 ## 分镜与数据口径
 
@@ -21,8 +33,7 @@ V2：**整整 30 秒，1920 × 1080、30 fps、140 BPM**。保留网站的深绿
 | 00:24.0 | 邀请带问题、数据或设备条件来提需求 |
 | 00:26.6 | 品牌、仓库地址与行动入口 |
 
-主图在上方，中文字幕位于独立底栏，不覆盖图表。播放器可选逐字字幕默认关闭，
-避免与画面底栏重复。通信雷达、机器人与嵌入式标注为面向方向；实际已收录案例为 CFD。
+主图在上方，中文字幕已嵌入独立底栏。WebVTT 副本放在 `video/` 供复用。通信雷达、机器人与嵌入式标注为面向方向；实际已收录案例为 CFD。
 
 圆柱指标来自 [RESULTS.md](../../projects/cylinder-flow/RESULTS.md) 与正式运行记录：
 9 次中位数原值 **0.223238375 s**，66 步，Cp RMSE 0.0003429041。
@@ -71,7 +82,7 @@ python media/product-intro/render.py --cli D:/codex/tools/hyperframes/node_modul
 网站本地地址 `http://127.0.0.1:8876/#intro-video`。在本目录执行
 `npm run dev -- --port 3017` 可打开 HyperFrames Studio，选择 `product-intro` 逐帧检查。
 不同浏览器、字体和编码器可能产生不同的 MP4 字节；附带成片的身份见
-`assets/video/manifest.json`。
+`video/manifest.json`。
 
 ## 修改文案与音频
 
@@ -88,7 +99,7 @@ python media/product-intro/render.py
 旁白使用 edge-tts 的 `zh-CN-YunxiNeural`、语速 +20%，必要时进行有限的保调节奏校正，
 超过 1.4 倍会拒绝并要求缩短文案。章节固定到 900 帧，总长始终 30 秒。
 `--direct` 仅在当前进程绕过失效代理，不更改系统网络设置。
-改变章节时，同步更新 `catalog-config.json` 的跳转点与视频版本标识。
+成品、样式和脚本的访问地址按内容校验值自动更新，部署后可避免复用旧缓存。
 
 ## 灵感和素材来源
 

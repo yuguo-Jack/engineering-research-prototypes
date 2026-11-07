@@ -2,6 +2,7 @@
 from pathlib import Path
 import argparse
 import html
+import hashlib
 import json
 import re
 
@@ -75,10 +76,12 @@ def header(prefix="", config=None):
 
 def shell(title, body, prefix="", config=None):
     config = config or json.loads((ROOT / "catalog-config.json").read_text(encoding="utf-8"))
+    style_version = hashlib.sha256((ROOT / "site/styles.css").read_bytes()).hexdigest()[:12]
+    script_version = hashlib.sha256((ROOT / "site/app.js").read_bytes()).hexdigest()[:12]
     return f'''{GENERATED_MARKER}
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="工程原型、可复现代码与实际结果"><title>{e(title)}</title><link rel="icon" href="data:,"><link rel="stylesheet" href="{prefix}site/styles.css"></head>
-<body><a class="skip-link" href="#main">跳到内容</a>{header(prefix, config)}<main id="main">{body}</main><footer><span>{e(config["name"])}</span><span>源码 · 环境 · 结果 · 复现</span><a href="{prefix}docs/MATERIALS.md">资料与授权</a></footer><script src="{prefix}site/app.js" defer></script></body></html>\n'''
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="工程原型、可复现代码与实际结果"><title>{e(title)}</title><link rel="icon" href="data:,"><link rel="stylesheet" href="{prefix}site/styles.css?v={style_version}"></head>
+<body><a class="skip-link" href="#main">跳到内容</a>{header(prefix, config)}<main id="main">{body}</main><footer><span>{e(config["name"])}</span><span>源码 · 环境 · 结果 · 复现</span><a href="{prefix}docs/MATERIALS.md">资料与授权</a></footer><script src="{prefix}site/app.js?v={script_version}" defer></script></body></html>\n'''
 
 
 def metric_tiles(project):
@@ -100,13 +103,14 @@ def intro_video_section(config):
     video = config.get("intro_video")
     if not video:
         return ""
-    version = "?v=" + e(video.get("version", "current"))
-    chapters = ''.join(f'<button type="button" data-video-seek="{e(chapter["start"])}"><span>{e(chapter["time"])}</span>{e(chapter["label"])}</button>' for chapter in video["chapters"])
+    def media_url(key):
+        path = local_file(ROOT, video[key])
+        version = hashlib.sha256(path.read_bytes()).hexdigest()[:12]
+        return e(video[key]) + "?v=" + version
     return f'''<section id="intro-video" class="intro-video-section" aria-labelledby="intro-video-title">
-<div class="section-heading"><div><p class="eyebrow">THE IDEA IN MOTION</p><h2 id="intro-video-title">30 秒，让想法动起来。</h2></div><p>工程思路 · 组织架构 · 应用方向 · 两个真实案例</p></div>
-<div class="intro-video-frame"><video id="intro-film" controls playsinline preload="metadata" poster="{e(video['poster'])}{version}" aria-label="工程研究原型30秒介绍，中文旁白及独立底栏字幕"><source src="{e(video['src'])}{version}" type="video/mp4"><track kind="captions" src="{e(video['captions'])}{version}" srclang="zh" label="逐字旁白（画面已有底栏字幕）">当前浏览器无法播放视频。<a href="{e(video['src'])}">下载 MP4 观看</a>。</video></div>
-<div class="video-meta"><span>00:30 · 1080p · 140 BPM · 中文字幕独立底栏</span><a class="quiet-link" href="{e(video['src'])}">单独打开视频 ↗</a></div>
-<div class="video-chapters" role="group" aria-label="跳转到视频章节">{chapters}</div><p id="video-status" class="video-status" role="status" aria-live="polite"></p>
+<div class="section-heading"><h2 id="intro-video-title">工程简介</h2></div>
+<div class="intro-video-frame"><video id="intro-film" controls playsinline preload="auto" poster="{media_url('poster')}" aria-label="工程简介"><source src="{media_url('webm')}" type="video/webm; codecs=&quot;vp9, opus&quot;"><source src="{media_url('src')}" type="video/mp4">当前浏览器无法播放视频。</video><button class="video-play-button" type="button" aria-label="播放工程简介" hidden><span aria-hidden="true">▶</span></button></div>
+<div class="video-footer"><p id="video-status" class="video-status" role="status" aria-live="polite"></p><a class="quiet-link" href="{e(video['src'])}" download>下载视频</a></div>
 </section>'''
 
 
@@ -167,7 +171,7 @@ def generated_files(root=ROOT):
     if config.get("community"):
         local_file(root, config["community"]["support_image"])
     if config.get("intro_video"):
-        for key in ("src", "poster", "captions"):
+        for key in ("src", "webm", "poster", "captions"):
             local_file(root, config["intro_video"][key])
     files = {"index.html": overview(config, projects), "site/catalog.json": json.dumps({"schema_version": 1, "projects": projects}, ensure_ascii=False, indent=2) + "\n"}
     for project in projects:

@@ -6,7 +6,7 @@ An independent collection of engineering prototypes, with source, reproducible
 entry points, measured results, and explicit environment/data requirements.
 
 **[在线成果总览](https://yuguo-jack.github.io/engineering-research-prototypes/)** ·
-[▶ 观看工程介绍 · 30 秒](https://yuguo-jack.github.io/engineering-research-prototypes/#intro-video) ·
+[▶ 观看工程介绍 · 30 秒](https://yuguo-jack.github.io/engineering-research-prototypes/?v=player3#intro-video) ·
 [组织规则](CONTRIBUTING.md) ·
 [复现等级](docs/REPRODUCIBILITY.md) · [收录与发布](docs/PUBLISHING.md) ·
 [新增成果模板](_templates/project/README.md)
@@ -14,10 +14,7 @@ entry points, measured results, and explicit environment/data requirements.
 每个 `projects/<id>/` 是一个独立成果，拥有自己的源码、
 依赖、构建入口、结果和说明；复制单个目录即可进行该成果的工作。
 
-[![工程研究原型介绍视频：工程思路、组织架构、应用场景和真实案例](assets/video/engineering-research-prototypes-intro-poster.jpg)](https://yuguo-jack.github.io/engineering-research-prototypes/#intro-video)
-
-30 秒介绍视频可在网页内直接播放，附中文旁白、独立底栏字幕和章节跳转。
-动画源工程与重新生成说明见 [media/product-intro](media/product-intro/README.md)。
+[![观看工程介绍](media/product-intro/video/poster.jpg)](https://yuguo-jack.github.io/engineering-research-prototypes/?v=player3#intro-video)
 
 ## 已收录成果
 
@@ -56,8 +53,7 @@ python tools/preview.py --port 8765
 projects/<id>/       独立成果：代码、环境、复现方法、结果、来源
 _templates/project/  新成果模板
 site/                由项目元数据生成的展示页面及静态资源
-media/product-intro/ HyperFrames 视频源工程、分镜和生成方法
-assets/video/        网页播放的视频、封面与中文字幕
+media/product-intro/ 视频源工程、生成方法与 video/ 播放成品
 tools/               目录生成、新成果创建和仓库检查工具
 schemas/             项目元数据约定
 docs/                复现、资料与发布约定

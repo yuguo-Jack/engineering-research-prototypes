@@ -23,21 +23,41 @@
   for (const button of filters) button.addEventListener("click", () => { domain = button.dataset.filter; applyFilter(); });
   document.querySelector("#clear-search")?.addEventListener("click", () => { search.value = ""; domain = "all"; applyFilter(); search.focus(); });
   const film = document.querySelector("#intro-film");
-  for (const button of document.querySelectorAll("[data-video-seek]")) {
-    button.addEventListener("click", () => {
-      const status = document.querySelector("#video-status");
-      const seek = () => {
-        film.currentTime = Number(button.dataset.videoSeek);
-        status.textContent = "";
-        film.play().catch(() => { status.textContent = "已定位章节，点击播放器开始播放。"; });
-      };
-      if (film.readyState >= 1) seek();
-      else {
-        film.addEventListener("loadedmetadata", seek, { once: true });
-        film.load();
-      }
-      film.scrollIntoView({ behavior: "smooth", block: "center" });
+  const playButton = document.querySelector(".video-play-button");
+  if (film && playButton) {
+    const status = document.querySelector("#video-status");
+    let requested = false;
+    let usedFallback = false;
+    let started = false;
+    const showError = () => {
+      playButton.disabled = false;
+      playButton.hidden = false;
+      status.textContent = "暂时无法播放，可下载观看。";
+    };
+    playButton.addEventListener("click", () => {
+      requested = true;
+      status.textContent = "";
+      playButton.disabled = true;
+      film.play().catch(showError);
     });
+    film.addEventListener("playing", () => {
+      started = true;
+      playButton.hidden = true;
+      playButton.disabled = false;
+      status.textContent = "";
+    });
+    film.addEventListener("pause", () => { playButton.hidden = started && !film.ended; });
+    film.addEventListener("ended", () => { playButton.hidden = false; });
+    film.addEventListener("error", () => {
+      const fallback = film.querySelector('source[type="video/mp4"]');
+      if (!usedFallback && fallback && !film.currentSrc.includes(".mp4")) {
+        usedFallback = true;
+        film.src = fallback.src;
+        film.load();
+        if (requested) film.play().catch(showError);
+      } else showError();
+    });
+    playButton.hidden = !film.paused;
   }
   for (const button of document.querySelectorAll("[data-copy]")) {
     button.addEventListener("click", async () => {

@@ -179,7 +179,8 @@ def main():
     data = {key: story[key] for key in ('duration', 'fps', 'bpm', 'voice', 'voice_rate')}
     data.update(schema_version=2, scenes=timing)
     (HERE / 'timing.json').write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    caption = ROOT / 'assets/video/engineering-research-prototypes-intro.zh.vtt'
+    caption = HERE / 'video/captions.zh.vtt'
+    caption.parent.mkdir(exist_ok=True)
     caption.write_text('WEBVTT\n\n' + '\n\n'.join(f'{i + 1}\n{stamp(a)} --> {stamp(b)}\n{text}' for i, (a, b, text) in enumerate(cues)) + '\n', encoding='utf-8', newline='\n')
     print(json.dumps({'seconds': story['duration'], 'cues': len(cues), 'scenes': len(timing), 'voice_fits': True}), flush=True)
 

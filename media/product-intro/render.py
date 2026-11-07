@@ -11,8 +11,7 @@ import sys
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 WORK = ROOT / ".local/video-production"
-OUTPUT = ROOT / "assets/video"
-NAME = "engineering-research-prototypes-intro"
+OUTPUT = HERE / "video"
 
 
 def executable(name):
@@ -56,14 +55,19 @@ def main():
     if not master.is_file():
         raise SystemExit("The rendered master is missing")
     OUTPUT.mkdir(exist_ok=True)
-    video = OUTPUT / f"{NAME}.mp4"
-    captions = OUTPUT / f"{NAME}.zh.vtt"
-    poster = OUTPUT / f"{NAME}-poster.jpg"
-    run([executable("ffmpeg"), "-v", "error", "-y", "-i", master, "-i", captions,
-         "-map", "0:v:0", "-map", "0:a:0", "-map", "1:0", "-c", "copy", "-c:s", "mov_text",
-         "-metadata:s:s:0", "language=zho", "-metadata:s:s:0", "title=中文字幕",
-         "-disposition:s:0", "0", "-metadata", "title=Engineering Research Prototypes",
-         "-movflags", "+faststart", video], cwd=ROOT)
+    video = OUTPUT / "intro.mp4"
+    webm = OUTPUT / "intro.webm"
+    captions = OUTPUT / "captions.zh.vtt"
+    poster = OUTPUT / "poster.jpg"
+    run([executable("ffmpeg"), "-v", "error", "-y", "-i", master,
+         "-map", "0:v:0", "-map", "0:a:0", "-c:v", "libx264", "-preset", "slow", "-crf", "23",
+         "-profile:v", "main", "-level:v", "4.0", "-pix_fmt", "yuv420p", "-g", "60", "-keyint_min", "30",
+         "-threads", "4", "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-ac", "2",
+         "-movflags", "+faststart", "-sn", video], cwd=ROOT)
+    run([executable("ffmpeg"), "-v", "error", "-y", "-i", master,
+         "-map", "0:v:0", "-map", "0:a:0", "-c:v", "libvpx-vp9", "-crf", "34", "-b:v", "0",
+         "-deadline", "good", "-cpu-used", "4", "-row-mt", "1", "-tile-columns", "2", "-threads", "4",
+         "-g", "60", "-pix_fmt", "yuv420p", "-c:a", "libopus", "-b:a", "96k", "-sn", webm], cwd=ROOT)
     run([executable("ffmpeg"), "-v", "error", "-y", "-ss", "3", "-i", video,
          "-frames:v", "1", "-vf", "scale=1280:720", "-q:v", "2", poster], cwd=ROOT)
     probe = json.loads(subprocess.check_output([executable("ffprobe"), "-v", "error", "-show_format",
@@ -73,17 +77,18 @@ def main():
     expected = json.loads((HERE / "timing.json").read_text(encoding="utf-8"))["duration"]
     if (visual["width"], visual["height"], visual["r_frame_rate"]) != (1920, 1080, "30/1") or abs(duration - expected) > .1:
         raise SystemExit("Unexpected video dimensions, frame rate or duration")
-    if video.stat().st_size > 10 * 1024 ** 2:
-        raise SystemExit("Video exceeds the repository's 10 MiB per-file budget; revise encoding before publication")
-    manifest = {"schema_version": 2, "duration_seconds": duration, "width": 1920, "height": 1080,
-                "edit": "v2-30s", "bpm": 140,
+    if max(video.stat().st_size, webm.stat().st_size) > 10 * 1024 ** 2:
+        raise SystemExit("A video exceeds the repository's 10 MiB per-file budget")
+    manifest = {"schema_version": 3, "duration_seconds": duration, "width": 1920, "height": 1080,
+                "edit": "v2-30s-web", "bpm": 140,
                 "fps": 30, "hyperframes_version": "0.9.19", "video_codec": visual["codec_name"],
                 "audio": "AAC stereo 48 kHz; synthetic Chinese narration and procedurally synthesized score",
-                "captions": "Dedicated burned-in caption rail; optional WebVTT and mov_text tracks, off by default", "files": []}
-    for path in (video, poster, captions):
+                "webm": "VP9 Profile 0 + Opus; H.264 Main + AAC fallback in MP4",
+                "captions": "Dedicated burned-in caption rail; companion WebVTT transcript", "files": []}
+    for path in (video, webm, poster, captions):
         data = path.read_bytes()
         manifest["files"].append({"path": path.name, "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()})
-    (OUTPUT / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (OUTPUT / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(manifest, ensure_ascii=False, indent=2))
 
 

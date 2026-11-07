@@ -1,0 +1,37 @@
+{
+  "schema_version": 3,
+  "duration_seconds": 30.016,
+  "width": 1920,
+  "height": 1080,
+  "edit": "v2-30s-web",
+  "bpm": 140,
+  "fps": 30,
+  "hyperframes_version": "0.9.19",
+  "video_codec": "h264",
+  "audio": "Synthetic Chinese narration and procedural score; AAC 48 kHz in MP4, Opus 48 kHz in WebM",
+  "captions": "Dedicated burned-in caption rail; companion WebVTT transcript",
+  "files": [
+    {
+      "path": "intro.mp4",
+      "bytes": 6129881,
+      "sha256": "80fd19583d52e850acb64aac541207e95bdacbf8afca6d06f048edb381803e8f"
+    },
+    {
+      "path": "intro.webm",
+      "bytes": 5023911,
+      "sha256": "f30d638c1156f3907da2b9eb4f5d7b3ea29d0713dda00d1c2639484b744e46c4"
+    },
+    {
+      "path": "poster.jpg",
+      "bytes": 73005,
+      "sha256": "cf9c59ad2727f5463f45e830837cc0d25f3305fa095fccb652e32a0a98209bcc"
+    },
+    {
+      "path": "captions.zh.vtt",
+      "bytes": 599,
+      "sha256": "100f82f8f7c02583d39110e06ece0f3845f68c2e2bfc95bf3366f9278a0b0a8f"
+    }
+  ],
+  "webm": "VP9 Profile 0 + Opus; H.264 Main + AAC fallback in MP4",
+  "content_duration_seconds": 30.0
+}
